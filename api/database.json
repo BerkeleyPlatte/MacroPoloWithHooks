@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "userName": "Berk",
+      "id": 1
+    },
+    {
+      "userName": "NotBerk",
+      "id": 2
+    },
+    {
+      "userName": "bob",
+      "id": 3
+    },
+    {
+      "userName": "frank",
+      "id": 4
+    }
+  ],
+  "foods": [
+    {
+      "id": 3,
+      "userId": 3,
+      "name": "ON Shake",
+      "fat": 1.5,
+      "carb": 3,
+      "protein": 24,
+      "date": 31,
+      "count": 5
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "name": "meat",
+      "fat": 101,
+      "carb": 101,
+      "protein": 101,
+      "date": 31,
+      "count": 4
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "name": "ON Shake",
+      "fat": 1.5,
+      "carb": 3,
+      "protein": 24,
+      "date": 31,
+      "count": 2
+    }
+  ],
+  "counts": [
+    {
+      "foodId": 0,
+      "id": 1
+    }
+  ]
+}
