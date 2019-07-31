@@ -22,7 +22,7 @@ export default class FoodCard extends Component {
   };
 
   updateCount = () => {
-      console.log("updateCount")
+    // console.log("updateCount");
     // evt.preventDefault();
     let editedFood = {
       id: this.props.food.id,
@@ -36,12 +36,12 @@ export default class FoodCard extends Component {
     };
     this.props.updateFood(editedFood).then(() => {
       this.props.history.push("/foods");
-      this.props.makeMacrosArrs()
+      this.props.makeMacrosArrs();
     });
   };
 
   componentDidMount() {
-      console.log("foodCardDidMount")
+    // console.log("foodCardDidMount");
     DataManager.get("foods", this.props.food.id).then(evt => {
       this.setState({
         userId: evt.userId,
@@ -57,7 +57,7 @@ export default class FoodCard extends Component {
   }
 
   increaseCount = () => {
-      console.log("increaseCount")
+    // console.log("increaseCount");
     this.setState({ count: this.state.count + 1 }, () => {
       this.updateCount();
     });
@@ -65,7 +65,7 @@ export default class FoodCard extends Component {
   };
 
   decreaseCount = () => {
-      console.log("decreaseCount")
+    // console.log("decreaseCount");
     this.setState({ count: this.state.count - 1 }, () => {
       this.updateCount();
     });
@@ -77,35 +77,16 @@ export default class FoodCard extends Component {
 
   clickParent = () => {
     if (this.props.action === "add") {
-      this.increaseCount()
+      this.increaseCount();
     } else if (this.props.action === "remove") {
-      this.decreaseCount()
+      this.decreaseCount();
     } else if (this.props.action === "delete") {
-      this.props.deleteFood(this.props.food.id)
+      this.props.deleteFood(this.props.food.id);
+      this.updateCount();
       this.props.history.push("/foods");
     }
-    // this.props.makeMacrosArrs()
   };
 
-//   grandparentOfClicks = () => {
-//       this.clickParent().then(() => {this.props.makeMacrosArrs()} )
-//   }
-//   clickParent = () => {
-//     if (this.props.action === "add") {
-//       this.increaseCount().then(() => {
-//         this.props.makeMacrosArrs();
-//       });
-//     } else if (this.props.action === "remove") {
-//       this.decreaseCount().then(() => {
-//         this.props.makeMacrosArrs();
-//       });
-//     } else if (this.props.action === "delete") {
-//       this.props.deleteFood(this.props.food.id).then(() => {
-//         this.props.makeMacrosArrs();
-//       });
-//       this.props.history.push("/foods");
-//     }
-//   };
   changeParent = () => {
     this.handleFieldChange();
     this.updateCount();

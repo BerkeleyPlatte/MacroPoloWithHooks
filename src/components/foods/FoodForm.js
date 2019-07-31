@@ -42,9 +42,7 @@ export default class FoodForm extends Component {
         this.props.addCount(newCount);
       })
       .then(() => this.props.history.push("/foods"))
-      .then(() => {
-        localStorage.setItem(this.state.name, this.state.count);
-      });
+     
   };
   // constructNewCount = evt => {
   //   evt.preventDefault();

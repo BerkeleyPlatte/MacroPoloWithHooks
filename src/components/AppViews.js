@@ -21,7 +21,7 @@ class AppViews extends Component {
   };
 
   makeMacrosArrs = () => {
-    console.log("makeMacrosArrs");
+    // console.log("makeMacrosArrs");
     let fatCount = [];
     let carbCount = [];
     let proteinCount = [];
@@ -39,6 +39,9 @@ class AppViews extends Component {
       let fatSum = fatCount.reduce((curr, next) => curr + next, 0);
       let carbSum = carbCount.reduce((curr, next) => curr + next, 0);
       let proteinSum = proteinCount.reduce((curr, next) => curr + next, 0);
+      localStorage.setItem("fatSoFar", fatSum);
+      localStorage.setItem("carbSoFar", carbSum);
+      localStorage.setItem("proteinSoFar", proteinSum);
       this.setState({
         fatSoFar: fatSum,
         carbSoFar: carbSum,
@@ -49,7 +52,7 @@ class AppViews extends Component {
   };
 
   componentDidMount() {
-    console.log("appViewsDidMount");
+    // console.log("appViewsDidMount");
     // this.makeMacrosArrs();
     // console.log("comp did mount");
     const newState = {};
@@ -57,7 +60,7 @@ class AppViews extends Component {
     DataManager.getAll("users")
       .then(users => (newState.users = users))
       .then(() =>
-        DataManager.getSorted("foods", sessionStorage.getItem("userId"))
+        DataManager.getAll("foods")
       )
       .then(foods => {
         newState.foods = foods;
@@ -135,7 +138,7 @@ class AppViews extends Component {
           exact
           path="/"
           render={props => {
-            return <Login {...props} />;
+            return <Login makeMacrosArrs={this.makeMacrosArrs} {...props} />;
           }}
         />
 

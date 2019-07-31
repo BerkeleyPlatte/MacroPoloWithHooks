@@ -46,8 +46,63 @@
       "carb": 3,
       "protein": 24,
       "date": 31,
-      "count": 4
+      "count": 6
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "name": "cheese1",
+      "fat": 20,
+      "carb": 0,
+      "protein": 12,
+      "date": 31,
+      "count": 1
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "name": "cheese2",
+      "fat": 17,
+      "carb": 0,
+      "protein": 13,
+      "date": 31,
+      "count": 1
+    },
+    {
+      "id": 8,
+      "userId": 1,
+      "name": "cheese3",
+      "fat": 15,
+      "carb": 0,
+      "protein": 21,
+      "date": 31,
+      "count": 1
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "name": "beans - 1/2cup",
+      "fat": 0,
+      "carb": 19,
+      "protein": 7,
+      "date": 31,
+      "count": 0
+    },
+    {
+      "name": "thing3",
+      "fat": 8,
+      "carb": 8,
+      "protein": 8,
+      "userId": 1,
+      "count": 0,
+      "date": 31,
+      "id": 10
     }
   ],
-  "counts": []
+  "counts": [
+    {
+      "foodId": 0,
+      "id": 1
+    }
+  ]
 }

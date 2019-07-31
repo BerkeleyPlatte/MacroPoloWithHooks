@@ -8,12 +8,8 @@ import Table from "react-bootstrap/Table";
 export default class FoodList extends Component {
   state = {
     action: "add"
-    // count: ""
   };
 
-  // recieveCount = count => {
-  //   this.setState({ count: count });
-  // };
 
   activateIncrease = () => {
     this.setState({ action: "add" });
@@ -53,19 +49,19 @@ export default class FoodList extends Component {
             <tbody>
               <tr>
                 <td>Fat</td>
-                <td>{this.props.fatSoFar}</td>
+                <td>{localStorage.getItem("fatSoFar")}</td>
                 <td>0</td>
                 <td>0</td>
               </tr>
               <tr>
                 <td>Carbs</td>
-                <td>{this.props.carbSoFar}</td>
+                <td>{localStorage.getItem("carbSoFar")}</td>
                 <td>0</td>
                 <td>0</td>
               </tr>
               <tr>
                 <td>Protein</td>
-                <td>{this.props.proteinSoFar}</td>
+                <td>{localStorage.getItem("proteinSoFar")}</td>
                 <td>0</td>
                 <td>0</td>
               </tr>
