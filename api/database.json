@@ -41,18 +41,13 @@
     {
       "id": 5,
       "userId": 1,
-      "name": "ON Shake",
+      "name": "On Shake",
       "fat": 1.5,
       "carb": 3,
       "protein": 24,
       "date": 31,
-      "count": 2
+      "count": 4
     }
   ],
-  "counts": [
-    {
-      "foodId": 0,
-      "id": 1
-    }
-  ]
+  "counts": []
 }
