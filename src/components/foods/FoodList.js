@@ -4,6 +4,8 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 // import MacrosTable from "../macros/MacrosTable";
 import Table from "react-bootstrap/Table";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 export default class FoodList extends Component {
   state = {
@@ -64,6 +66,14 @@ export default class FoodList extends Component {
                 <td>{localStorage.getItem("proteinSoFar")}</td>
                 <td>0</td>
                 <td>0</td>
+              </tr>
+              <tr>
+                <td colSpan="4">
+                  <button type="button" className="btn btn-secondary btn-sm">
+                    Set Weight
+                  </button>
+                  <input type="text" id="weight" placeholder="Enter Weight" />
+                </td>
               </tr>
             </tbody>
           </Table>

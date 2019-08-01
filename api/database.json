@@ -15,6 +15,10 @@
     {
       "userName": "frank",
       "id": 4
+    },
+    {
+      "userName": "shim",
+      "id": 5
     }
   ],
   "foods": [
@@ -39,46 +43,6 @@
       "count": 4
     },
     {
-      "id": 5,
-      "userId": 1,
-      "name": "On Shake",
-      "fat": 1.5,
-      "carb": 3,
-      "protein": 24,
-      "date": 31,
-      "count": 6
-    },
-    {
-      "id": 6,
-      "userId": 1,
-      "name": "cheese1",
-      "fat": 20,
-      "carb": 0,
-      "protein": 12,
-      "date": 31,
-      "count": 1
-    },
-    {
-      "id": 7,
-      "userId": 1,
-      "name": "cheese2",
-      "fat": 17,
-      "carb": 0,
-      "protein": 13,
-      "date": 31,
-      "count": 1
-    },
-    {
-      "id": 8,
-      "userId": 1,
-      "name": "cheese3",
-      "fat": 15,
-      "carb": 0,
-      "protein": 21,
-      "date": 31,
-      "count": 1
-    },
-    {
       "id": 9,
       "userId": 1,
       "name": "beans - 1/2cup",
@@ -86,23 +50,127 @@
       "carb": 19,
       "protein": 7,
       "date": 31,
-      "count": 0
+      "count": 4
     },
     {
-      "name": "thing3",
+      "id": 10,
+      "userId": 1,
+      "name": "ON Shake",
+      "fat": 1.5,
+      "carb": 3,
+      "protein": 24,
+      "date": 31,
+      "count": 3
+    },
+    {
+      "id": 11,
+      "userId": 1,
+      "name": "MP Shake",
+      "fat": 2,
+      "carb": 5,
+      "protein": 25,
+      "date": 31,
+      "count": 2
+    },
+    {
+      "id": 12,
+      "userId": 1,
+      "name": "coconut oil - 1tbsp",
+      "fat": 14,
+      "carb": 0,
+      "protein": 0,
+      "date": 31,
+      "count": 1
+    },
+    {
+      "id": 13,
+      "userId": 1,
+      "name": "pumpkin seeds - 1/4cup",
+      "fat": 17,
+      "carb": 4,
+      "protein": 10,
+      "date": 31,
+      "count": 1
+    },
+    {
+      "id": 14,
+      "userId": 1,
+      "name": "chicken - 4oz",
+      "fat": 2.5,
+      "carb": 0,
+      "protein": 22,
+      "date": 31,
+      "count": 4
+    },
+    {
+      "id": 15,
+      "userId": 1,
+      "name": "coconut oil - 1tsp",
+      "fat": 4.67,
+      "carb": 0,
+      "protein": 0,
+      "date": 31,
+      "count": 1
+    },
+    {
+      "id": 16,
+      "userId": 1,
+      "name": "veggies - 1cup",
+      "fat": 0,
+      "carb": 5,
+      "protein": 2,
+      "date": 31,
+      "count": 1
+    },
+    {
+      "id": 17,
+      "userId": 1,
+      "name": "beans - 1/4 cup",
+      "fat": 0,
+      "carb": 9.5,
+      "protein": 3.5,
+      "date": 31,
+      "count": 1
+    },
+    {
+      "id": 18,
+      "userId": 5,
+      "name": "fried balls",
       "fat": 8,
       "carb": 8,
       "protein": 8,
-      "userId": 1,
-      "count": 0,
-      "date": 31,
-      "id": 10
+      "date": 1,
+      "count": 3
     }
   ],
   "counts": [
     {
       "foodId": 0,
       "id": 1
+    },
+    {
+      "foodId": 0,
+      "id": 2
+    },
+    {
+      "foodId": 0,
+      "id": 3
+    },
+    {
+      "foodId": 0,
+      "id": 4
+    },
+    {
+      "foodId": 0,
+      "id": 5
+    },
+    {
+      "foodId": 0,
+      "id": 6
+    },
+    {
+      "foodId": 0,
+      "id": 7
     }
   ]
 }

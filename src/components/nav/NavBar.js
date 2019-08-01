@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class NavBar extends Component {
+  clearStorage = () => {
+    sessionStorage.clear();
+    localStorage.clear();
+  };
   render() {
     return (
       <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
@@ -16,12 +20,10 @@ class NavBar extends Component {
             <Link className="nav-link" to="/foods" />
           </li>
         </ul>
-        
 
         <Link
-        
           className="btn btn-primary btn-sm"
-          onClick={() => sessionStorage.clear()}
+          onClick={() => this.clearStorage}
           to="/"
         >
           Logout
