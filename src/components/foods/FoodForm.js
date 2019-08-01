@@ -38,9 +38,9 @@ export default class FoodForm extends Component {
 
     this.props
       .addFood(newFood)
-      .then(() => {
-        this.props.addCount(newCount);
-      })
+      // .then(() => {
+      //   this.props.addCount(newCount);
+      // })
       .then(() => this.props.history.push("/foods"))
      
   };

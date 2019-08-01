@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 import DataManager from "../module/DataManager";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
-// import FoodEditForm from "./foods/FoodEditForm";
+import FoodEditForm from "./foods/FoodEditForm";
 import FoodForm from "./foods/FoodForm";
 
 class AppViews extends Component {
@@ -14,7 +14,6 @@ class AppViews extends Component {
   state = {
     foods: [],
     users: [],
-    counts: [],
     fatSoFar: 0,
     carbSoFar: 0,
     proteinSoFar: 0
@@ -59,9 +58,7 @@ class AppViews extends Component {
 
     DataManager.getAll("users")
       .then(users => (newState.users = users))
-      .then(() =>
-        DataManager.getAll("foods")
-      )
+      .then(() => DataManager.getAll("foods"))
       .then(foods => {
         newState.foods = foods;
         this.setState(newState);
@@ -98,16 +95,6 @@ class AppViews extends Component {
         })
       );
   };
-  addCount = count => {
-    return DataManager.post(count, "counts")
-      .then(() => DataManager.getAll("counts"))
-
-      .then(counts =>
-        this.setState({
-          counts: counts
-        })
-      );
-  };
 
   updateFood = changedFood => {
     return DataManager.put(changedFood, "foods")
@@ -116,6 +103,17 @@ class AppViews extends Component {
       .then(foods =>
         this.setState({
           foods: foods
+        })
+      );
+  };
+
+  updateUser = changedUser => {
+    return DataManager.put(changedUser, "users")
+      .then(() => DataManager.getAll("users"))
+
+      .then(users =>
+        this.setState({
+          users: users
         })
       );
   };
@@ -165,6 +163,7 @@ class AppViews extends Component {
                   fatSoFar={this.state.fatSoFar}
                   carbSoFar={this.state.carbSoFar}
                   proteinSoFar={this.state.proteinSoFar}
+                  users={this.state.users}
                 />
               );
             } else {
@@ -182,7 +181,6 @@ class AppViews extends Component {
                 {...props}
                 foods={this.state.foods}
                 addFood={this.addFood}
-                addCount={this.addCount}
               />
             );
           }}

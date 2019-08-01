@@ -23,7 +23,6 @@ export default class FoodCard extends Component {
 
   updateCount = () => {
     // console.log("updateCount");
-    // evt.preventDefault();
     let editedFood = {
       id: this.props.food.id,
       userId: Number(sessionStorage.getItem("userId")),
@@ -84,6 +83,8 @@ export default class FoodCard extends Component {
       this.props.deleteFood(this.props.food.id);
       this.updateCount();
       this.props.history.push("/foods");
+    // } else if (this.props.action === "edit") {
+    //   this.props.history.push(`/foods/${this.props.food.id}/edit`);
     }
   };
 

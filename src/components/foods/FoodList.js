@@ -27,15 +27,22 @@ export default class FoodList extends Component {
   activateDelete = () => {
     this.setState({ action: "delete" });
   };
+  activateEdit = () => {
+    this.setState({ action: "edit" });
+  };
 
   render() {
+    let weight = localStorage.getItem("weight");
+    let fatGoal = (weight * 0.3).toFixed(1);
+    let carbGoal = (weight * 0.6).toFixed(1);
+    let proteinGoal = (weight * 1.4).toFixed(1);
     return (
       <div>
         <label>Weight:</label>
         <input
           type="text"
           id="weight"
-          placeholder={this.state.weight}
+          placeholder={weight}
           onChange={this.handleFieldChange}
         />
         <button
@@ -61,29 +68,29 @@ export default class FoodList extends Component {
               <tr>
                 <td>Fat</td>
                 <td>{localStorage.getItem("fatSoFar")}</td>
-                <td>0</td>
-                <td>0</td>
+                <td>
+                  {(fatGoal - localStorage.getItem("fatSoFar")).toFixed(1)}
+                </td>
+                <td>{fatGoal}</td>
               </tr>
               <tr>
                 <td>Carbs</td>
                 <td>{localStorage.getItem("carbSoFar")}</td>
-                <td>0</td>
-                <td>0</td>
+                <td>
+                  {(carbGoal - localStorage.getItem("carbSoFar")).toFixed(1)}
+                </td>
+                <td>{carbGoal}</td>
               </tr>
               <tr>
                 <td>Protein</td>
                 <td>{localStorage.getItem("proteinSoFar")}</td>
-                <td>0</td>
-                <td>0</td>
-              </tr>
-              {/* <tr>
-                <td colSpan="3">
-                  <input type="text" id="weight" placeholder="Enter Weight" />
-                  <button type="button" className="btn btn-secondary btn-sm">
-                    Set Weight
-                  </button>
+                <td>
+                  {(proteinGoal - localStorage.getItem("proteinSoFar")).toFixed(
+                    1
+                  )}
                 </td>
-              </tr> */}
+                <td>{proteinGoal}</td>
+              </tr>
             </tbody>
           </Table>
         </div>
@@ -125,6 +132,14 @@ export default class FoodList extends Component {
               >
                 Delete
               </ToggleButton>
+              {/* <ToggleButton
+                onClick={this.activateEdit}
+                type="radio"
+                name="radio"
+                value="4"
+              >
+                Edit
+              </ToggleButton> */}
             </ButtonGroup>
           </div>
           <section className="foods">

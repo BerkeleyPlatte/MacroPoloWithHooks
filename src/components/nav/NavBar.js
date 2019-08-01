@@ -4,8 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 class NavBar extends Component {
   clearStorage = () => {
-    sessionStorage.clear();
     localStorage.clear();
+    sessionStorage.clear();
   };
   render() {
     return (

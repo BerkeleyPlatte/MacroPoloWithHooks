@@ -5,9 +5,10 @@ export default class FoodEditForm extends Component {
   state = {
     userId: "",
     name: "",
-    fat: "",
-    carb: "",
-    protein: ""
+    carb: 0,
+    fat: 0,
+    protein: 0
+    
   };
 
   handleFieldChange = evt => {
@@ -16,12 +17,16 @@ export default class FoodEditForm extends Component {
     this.setState(stateToChange);
   };
 
-  updateExistingFood = evt => {
+  updateExistingfood = evt => {
     evt.preventDefault();
 
     const editedFood = {
       id: this.props.match.params.foodId,
       userId: parseInt(sessionStorage.getItem("userId")),
+      name: this.state.name,
+      fat: this.state.fat,
+      carb: this.state.carb,
+      protein: this.state.protein
     };
 
     this.props
@@ -31,34 +36,71 @@ export default class FoodEditForm extends Component {
 
   componentDidMount() {
     return DataManager.get("foods", this.props.match.params.foodId).then(
+      food => {
+        this.setState({
+          userId: food.userId,
+          name: food.name,
+          fat: food.fat,
+          carb: food.carb,
+          protein: food.protein
+        });
+      }
     );
   }
-
 
   render() {
     return (
       <React.Fragment>
         <form className="foodForm">
           <div className="form-group">
+            <label htmlFor="food">Food name</label>
+            <input
+              autoFocus
               type="text"
               required
+              placeholder={this.state.name}
               className="form-control"
               onChange={this.handleFieldChange}
+              id="name"
+            />
+          </div>
           <div className="form-group">
-            <label htmlFor="date">Date</label>
+            <label htmlFor="fat">Fat</label>
             <input
-              type="date"
+              type="text"
               required
+              placeholder={this.state.fat}
               className="form-control"
               onChange={this.handleFieldChange}
-              id="date"
-              value={this.state.date}
+              id="fat"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="carb">Carbs</label>
+            <input
+              type="text"
+              required
+              placeholder={this.state.carb}
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="carb"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="protein">Protein</label>
+            <input
+              type="text"
+              required
+              placeholder={this.state.protein}
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="protein"
             />
           </div>
 
           <button
             type="submit"
-            onClick={this.updateExistingFood}
+            onClick={this.updateExistingfood}
             className="btn btn-primary"
           >
             Submit
