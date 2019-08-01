@@ -50,7 +50,7 @@
       "carb": 19,
       "protein": 7,
       "date": 31,
-      "count": 4
+      "count": 1
     },
     {
       "id": 10,
@@ -80,7 +80,7 @@
       "carb": 0,
       "protein": 0,
       "date": 31,
-      "count": 1
+      "count": 0
     },
     {
       "id": 13,
@@ -100,7 +100,7 @@
       "carb": 0,
       "protein": 22,
       "date": 31,
-      "count": 4
+      "count": 5
     },
     {
       "id": 15,
@@ -130,7 +130,7 @@
       "carb": 9.5,
       "protein": 3.5,
       "date": 31,
-      "count": 1
+      "count": 0
     },
     {
       "id": 18,
@@ -141,6 +141,26 @@
       "protein": 8,
       "date": 1,
       "count": 3
+    },
+    {
+      "id": 19,
+      "userId": 1,
+      "name": "sprite",
+      "fat": 0,
+      "carb": 38,
+      "protein": 0,
+      "date": 1,
+      "count": 1
+    },
+    {
+      "id": 20,
+      "userId": 1,
+      "name": "pb crackers",
+      "fat": 11,
+      "carb": 25,
+      "protein": 5,
+      "date": 1,
+      "count": 1
     }
   ],
   "counts": [
@@ -171,6 +191,14 @@
     {
       "foodId": 0,
       "id": 7
+    },
+    {
+      "foodId": 0,
+      "id": 8
+    },
+    {
+      "foodId": 0,
+      "id": 9
     }
   ]
 }

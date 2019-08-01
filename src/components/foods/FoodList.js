@@ -2,16 +2,20 @@ import React, { Component } from "react";
 import FoodCard from "./FoodCard";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
-// import MacrosTable from "../macros/MacrosTable";
 import Table from "react-bootstrap/Table";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 export default class FoodList extends Component {
   state = {
-    action: "add"
+    action: "add",
+    weight: 0
   };
 
+  handleFieldChange = evt => {
+    const stateToChange = {};
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+  };
 
   activateIncrease = () => {
     this.setState({ action: "add" });
@@ -24,21 +28,26 @@ export default class FoodList extends Component {
     this.setState({ action: "delete" });
   };
 
-  componentDidMount() {
-    //   this.makeMacrosArrs()
-  }
   render() {
     return (
       <div>
+        <label>Weight:</label>
+        <input
+          type="text"
+          id="weight"
+          placeholder={this.state.weight}
+          onChange={this.handleFieldChange}
+        />
+        <button
+          type="button"
+          className="btn btn-secondary btn-sm"
+          onClick={() => {
+            localStorage.setItem("weight", this.state.weight);
+          }}
+        >
+          Set Weight
+        </button>
         <div>
-          {/* <MacrosTable
-            makeMacrosArrs={this.props.makeMacrosArrs}
-            foods={this.props.foods}
-            {...this.props}
-            fatSoFar={this.props.fatSoFar}
-            carbSoFar={this.props.carbSoFar}
-            proteinSoFar={this.props.proteinSoFar}
-          /> */}
           <Table striped bordered hover size="sm">
             <thead>
               <tr>
@@ -67,14 +76,14 @@ export default class FoodList extends Component {
                 <td>0</td>
                 <td>0</td>
               </tr>
-              <tr>
-                <td colSpan="4">
+              {/* <tr>
+                <td colSpan="3">
+                  <input type="text" id="weight" placeholder="Enter Weight" />
                   <button type="button" className="btn btn-secondary btn-sm">
                     Set Weight
                   </button>
-                  <input type="text" id="weight" placeholder="Enter Weight" />
                 </td>
-              </tr>
+              </tr> */}
             </tbody>
           </Table>
         </div>
