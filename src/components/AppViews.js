@@ -164,6 +164,7 @@ class AppViews extends Component {
                   carbSoFar={this.state.carbSoFar}
                   proteinSoFar={this.state.proteinSoFar}
                   users={this.state.users}
+                  updateUser={this.updateUser}
                 />
               );
             } else {

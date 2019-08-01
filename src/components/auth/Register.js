@@ -4,7 +4,7 @@ import DataManager from "../../module/DataManager";
 export default class Register extends Component {
   state = {
     userName: "",
-    userWeight: 0
+    weight: 0
   };
 
   handleFieldChange = evt => {
@@ -27,7 +27,7 @@ export default class Register extends Component {
       } else {
         let newUser = {
           userName: this.state.userName,
-          userWeight: this.state.userWeight
+          weight: this.state.weight
         };
         this.props.addUser(newUser).then(() =>
           DataManager.getAll("users")

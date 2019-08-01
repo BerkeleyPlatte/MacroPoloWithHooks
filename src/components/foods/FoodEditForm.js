@@ -8,7 +8,7 @@ export default class FoodEditForm extends Component {
     carb: 0,
     fat: 0,
     protein: 0
-    
+
   };
 
   handleFieldChange = evt => {
@@ -17,7 +17,7 @@ export default class FoodEditForm extends Component {
     this.setState(stateToChange);
   };
 
-  updateExistingfood = evt => {
+  updateExistingFood = evt => {
     evt.preventDefault();
 
     const editedFood = {
@@ -100,7 +100,7 @@ export default class FoodEditForm extends Component {
 
           <button
             type="submit"
-            onClick={this.updateExistingfood}
+            onClick={this.updateExistingFood}
             className="btn btn-primary"
           >
             Submit

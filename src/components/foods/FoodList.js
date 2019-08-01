@@ -4,17 +4,33 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import Table from "react-bootstrap/Table";
 import "bootstrap/dist/css/bootstrap.min.css";
+import DataManager from "../../module/DataManager";
 
 export default class FoodList extends Component {
   state = {
     action: "add",
-    weight: 0
+    weight: 0,
+    userName: ""
   };
 
   handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
+  };
+
+  updateExistingUser = () => {
+    // evt.preventDefault();
+
+    let editedUser = {
+      id: Number(sessionStorage.getItem("userId")),
+      userName: this.state.userName,
+      weight: this.state.weight
+    };
+
+    this.props
+      .updateUser(editedUser)
+      .then(() => this.props.history.push("/foods"));
   };
 
   activateIncrease = () => {
@@ -31,8 +47,19 @@ export default class FoodList extends Component {
     this.setState({ action: "edit" });
   };
 
+  componentDidMount() {
+    return DataManager.get("users", sessionStorage.getItem("userId")).then(
+      user => {
+        this.setState({
+          userName: user.userName,
+          weight: user.weight
+        });
+      }
+    );
+  }
+
   render() {
-    let weight = localStorage.getItem("weight");
+    let weight = this.state.weight;
     let fatGoal = (weight * 0.3).toFixed(1);
     let carbGoal = (weight * 0.6).toFixed(1);
     let proteinGoal = (weight * 1.4).toFixed(1);
@@ -49,10 +76,11 @@ export default class FoodList extends Component {
           type="button"
           className="btn btn-secondary btn-sm"
           onClick={() => {
-            localStorage.setItem("weight", this.state.weight);
+            // localStorage.setItem("weight", this.state.weight);
+            this.updateExistingUser()
           }}
         >
-          Set Weight
+          Save Weight
         </button>
         <div>
           <Table striped bordered hover size="sm">

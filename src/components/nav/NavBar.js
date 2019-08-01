@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 class NavBar extends Component {
   clearStorage = () => {
-    localStorage.clear();
+    localStorage.clear()
     sessionStorage.clear();
   };
   render() {
@@ -23,7 +23,7 @@ class NavBar extends Component {
 
         <Link
           className="btn btn-primary btn-sm"
-          onClick={() => this.clearStorage}
+          onClick={this.clearStorage}
           to="/"
         >
           Logout
