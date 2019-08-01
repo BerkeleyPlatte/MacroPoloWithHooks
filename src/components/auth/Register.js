@@ -3,7 +3,8 @@ import DataManager from "../../module/DataManager";
 
 export default class Register extends Component {
   state = {
-    userName: ""
+    userName: "",
+    weight: 0
   };
 
   handleFieldChange = evt => {
@@ -25,14 +26,17 @@ export default class Register extends Component {
         window.alert("You left a field blank!");
       } else {
         let newUser = {
-          userName: this.state.userName
+          userName: this.state.userName,
+          weight: this.state.weight
         };
         this.props.addUser(newUser).then(() =>
           DataManager.getAll("users")
             .then(users =>
               users.find(user => user.userName === this.state.userName)
             )
-            .then(foundUser => sessionStorage.setItem("userId", foundUser.id))
+            .then(foundUser => {
+              sessionStorage.setItem("userId", foundUser.id);
+            })
             .then(() => this.props.history.push("/foods"))
         );
       }

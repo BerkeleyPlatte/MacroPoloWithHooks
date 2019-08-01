@@ -25,6 +25,7 @@ export default class Login extends Component {
       if (singleUser) {
         sessionStorage.setItem("userId", singleUser.id);
         this.props.history.push("/foods");
+        this.props.makeMacrosArrs();
       } else {
         window.alert(
           "Invalid login information. Please try again or register a new account."

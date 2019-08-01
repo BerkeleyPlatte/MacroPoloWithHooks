@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 import DataManager from "../module/DataManager";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
-// import FoodEditForm from "./foods/FoodEditForm";
+import FoodEditForm from "./foods/FoodEditForm";
 import FoodForm from "./foods/FoodForm";
 
 class AppViews extends Component {
@@ -14,49 +14,54 @@ class AppViews extends Component {
   state = {
     foods: [],
     users: [],
-    counts: [],
     fatSoFar: 0,
     carbSoFar: 0,
     proteinSoFar: 0
   };
 
- 
-
   makeMacrosArrs = () => {
+    // console.log("makeMacrosArrs");
     let fatCount = [];
     let carbCount = [];
     let proteinCount = [];
-    return DataManager.getSorted("foods", sessionStorage.getItem("userId")).then(foods => {
+    return DataManager.getSorted(
+      "foods",
+      sessionStorage.getItem("userId")
+    ).then(foods => {
       foods.forEach(food => {
-        console.log(food);
+        // console.log(food);
         fatCount.push(food.fat * food.count);
         carbCount.push(food.carb * food.count);
         proteinCount.push(food.protein * food.count);
-        console.log(fatCount);
+        // console.log(fatCount);
       });
       let fatSum = fatCount.reduce((curr, next) => curr + next, 0);
       let carbSum = carbCount.reduce((curr, next) => curr + next, 0);
       let proteinSum = proteinCount.reduce((curr, next) => curr + next, 0);
+      localStorage.setItem("fatSoFar", fatSum);
+      localStorage.setItem("carbSoFar", carbSum);
+      localStorage.setItem("proteinSoFar", proteinSum);
       this.setState({
         fatSoFar: fatSum,
         carbSoFar: carbSum,
         proteinSoFar: proteinSum
       });
-      console.log(this.state.fatSoFar);
+      //   console.log(this.state.fatSoFar);
     });
   };
 
   componentDidMount() {
+    // console.log("appViewsDidMount");
     // this.makeMacrosArrs();
-    console.log("comp did mount");
+    // console.log("comp did mount");
     const newState = {};
 
     DataManager.getAll("users")
       .then(users => (newState.users = users))
-      .then(() => DataManager.getSorted("foods", sessionStorage.getItem("userId")))
+      .then(() => DataManager.getAll("foods"))
       .then(foods => {
         newState.foods = foods;
-        this.setState(newState, () => console.log(this.state.foods));
+        this.setState(newState);
       });
   }
 
@@ -90,16 +95,6 @@ class AppViews extends Component {
         })
       );
   };
-  addCount = count => {
-    return DataManager.post(count, "counts")
-      .then(() => DataManager.getAll("counts"))
-
-      .then(counts =>
-        this.setState({
-          counts: counts
-        })
-      );
-  };
 
   updateFood = changedFood => {
     return DataManager.put(changedFood, "foods")
@@ -108,6 +103,17 @@ class AppViews extends Component {
       .then(foods =>
         this.setState({
           foods: foods
+        })
+      );
+  };
+
+  updateUser = changedUser => {
+    return DataManager.put(changedUser, "users")
+      .then(() => DataManager.getAll("users"))
+
+      .then(users =>
+        this.setState({
+          users: users
         })
       );
   };
@@ -130,7 +136,7 @@ class AppViews extends Component {
           exact
           path="/"
           render={props => {
-            return <Login {...props} />;
+            return <Login makeMacrosArrs={this.makeMacrosArrs} {...props} />;
           }}
         />
 
@@ -157,6 +163,8 @@ class AppViews extends Component {
                   fatSoFar={this.state.fatSoFar}
                   carbSoFar={this.state.carbSoFar}
                   proteinSoFar={this.state.proteinSoFar}
+                  users={this.state.users}
+                  updateUser={this.updateUser}
                 />
               );
             } else {
@@ -174,7 +182,6 @@ class AppViews extends Component {
                 {...props}
                 foods={this.state.foods}
                 addFood={this.addFood}
-                addCount={this.addCount}
               />
             );
           }}

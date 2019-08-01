@@ -1,58 +1,112 @@
 {
   "users": [
     {
-      "userName": "Berk",
-      "id": 1
+      "id": 1,
+      "userName": "berk",
+      "weight": "186"
     },
     {
-      "userName": "NotBerk",
-      "id": 2
+      "id": 2,
+      "userName": "paul",
+      "weight": "186"
     },
     {
-      "userName": "bob",
-      "id": 3
-    },
-    {
-      "userName": "frank",
-      "id": 4
+      "id": 3,
+      "userName": "jess",
+      "weight": "155"
     }
   ],
   "foods": [
     {
-      "id": 3,
-      "userId": 3,
-      "name": "ON Shake",
-      "fat": 1.5,
-      "carb": 3,
+      "id": 19,
+      "userId": 1,
+      "name": "MP Shake",
+      "fat": 2,
+      "carb": 5,
+      "protein": 25,
+      "date": 1,
+      "count": 0
+    },
+    {
+      "id": 21,
+      "userId": 1,
+      "name": "Walmart Chix 4oz",
+      "fat": 2.5,
+      "carb": 0,
+      "protein": 22,
+      "date": 1,
+      "count": 0
+    },
+    {
+      "name": "Costco Chix 3oz",
+      "fat": 1,
+      "carb": 0,
       "protein": 24,
-      "date": 31,
-      "count": 5
+      "userId": 1,
+      "count": 0,
+      "date": 1,
+      "id": 22
     },
     {
-      "id": 4,
-      "userId": 4,
-      "name": "meat",
-      "fat": 101,
-      "carb": 101,
-      "protein": 101,
-      "date": 31,
-      "count": 4
+      "id": 24,
+      "userId": 1,
+      "name": "cheesecake",
+      "fat": 28,
+      "carb": 32,
+      "protein": 7,
+      "date": 1,
+      "count": 1
     },
     {
-      "id": 5,
+      "id": 25,
+      "userId": 1,
+      "name": "sprite ",
+      "fat": 0,
+      "carb": 37,
+      "protein": 0,
+      "date": 1,
+      "count": 1
+    },
+    {
+      "id": 26,
+      "userId": 1,
+      "name": "toast chee crackers",
+      "fat": 12,
+      "carb": 23,
+      "protein": 6,
+      "date": 1,
+      "count": 1
+    },
+    {
+      "id": 28,
       "userId": 1,
       "name": "ON Shake",
       "fat": 1.5,
       "carb": 3,
       "protein": 24,
-      "date": 31,
-      "count": 2
+      "date": 1,
+      "count": 0
+    },
+    {
+      "id": 29,
+      "userId": 2,
+      "name": "beef",
+      "fat": 100,
+      "carb": 100,
+      "protein": 100,
+      "date": 1,
+      "count": 1
+    },
+    {
+      "name": "thing",
+      "fat": 4,
+      "carb": 4,
+      "protein": 4,
+      "userId": 3,
+      "count": 0,
+      "date": 1,
+      "id": 30
     }
   ],
-  "counts": [
-    {
-      "foodId": 0,
-      "id": 1
-    }
-  ]
+  "counts": []
 }

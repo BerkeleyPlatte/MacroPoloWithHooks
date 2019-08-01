@@ -1,4 +1,4 @@
-const remoteURL = "http://localhost:5002";
+const remoteURL = "http://localhost:5001";
 
 export default Object.create(null, {
   get: {
@@ -22,7 +22,7 @@ export default Object.create(null, {
 
   delete: {
     value: function(resource, id) {
-      console.log("id", id);
+    //   console.log("id", id);
       return fetch(`${remoteURL}/${resource}/${id}`, {
         method: "DELETE",
         headers: {
