@@ -77,7 +77,7 @@ export default class FoodList extends Component {
           className="btn btn-secondary btn-sm"
           onClick={() => {
             // localStorage.setItem("weight", this.state.weight);
-            this.updateExistingUser()
+            this.updateExistingUser();
           }}
         >
           Save Weight
@@ -99,7 +99,7 @@ export default class FoodList extends Component {
                 <td>
                   {(fatGoal - localStorage.getItem("fatSoFar")).toFixed(1)}
                 </td>
-                <td>{fatGoal}</td>
+                {fatGoal}
               </tr>
               <tr>
                 <td>Carbs</td>

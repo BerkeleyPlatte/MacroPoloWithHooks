@@ -13,7 +13,7 @@ class NavBar extends Component {
         <ul className="nav nav-pills nav-fill">
           <li className="nav-item">
             <Link className="nav-link" to="/foods">
-              MacroPolo
+              <h3>MacroPolo</h3>
             </Link>
           </li>
           <li className="nav-item">

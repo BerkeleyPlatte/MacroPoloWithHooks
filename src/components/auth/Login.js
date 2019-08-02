@@ -37,7 +37,7 @@ export default class Login extends Component {
   render() {
     return (
       <form onSubmit={this.handleLogin}>
-        <h1 className="h3 mb-3 font-weight-normal">Please Sign In</h1>
+        <h1 className="h4 mb-3 font-weight-normal">Please Sign In</h1>
         <label htmlFor="inputUserName">User Name:&nbsp;</label>
         <input
           onChange={this.handleFieldChange}
