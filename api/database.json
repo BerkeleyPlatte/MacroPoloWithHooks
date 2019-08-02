@@ -19,6 +19,11 @@
       "id": 4,
       "userName": "fink",
       "weight": "100"
+    },
+    {
+      "id": 5,
+      "userName": "ellie",
+      "weight": "99"
     }
   ],
   "foods": [
@@ -40,7 +45,7 @@
       "carb": 37,
       "protein": 0,
       "date": 1,
-      "count": 1
+      "count": 0
     },
     {
       "id": 26,
@@ -50,17 +55,7 @@
       "carb": 23,
       "protein": 6,
       "date": 1,
-      "count": 1
-    },
-    {
-      "id": 28,
-      "userId": 1,
-      "name": "ON Shake",
-      "fat": 1.5,
-      "carb": 3,
-      "protein": 24,
-      "date": 1,
-      "count": 10
+      "count": 0
     },
     {
       "id": 29,
@@ -131,6 +126,26 @@
       "protein": 24,
       "date": 2,
       "count": 4
+    },
+    {
+      "id": 36,
+      "userId": 1,
+      "name": "ON Shake",
+      "fat": 1.5,
+      "carb": 3,
+      "protein": 24,
+      "date": 2,
+      "count": 3
+    },
+    {
+      "id": 37,
+      "userId": 5,
+      "name": "sprite",
+      "fat": 0,
+      "carb": 36,
+      "protein": 0,
+      "date": 2,
+      "count": 0
     }
   ],
   "counts": []

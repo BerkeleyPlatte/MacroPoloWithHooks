@@ -19,6 +19,21 @@ class AppViews extends Component {
     proteinSoFar: 0
   };
 
+  revertUserCounts = () => {
+    return DataManager.getSorted("foods", sessionStorage.getItem("userId"))
+      .then(foods => {
+        foods.forEach(food => {
+          food.count = 0;
+          this.updateFood(food);
+        });
+      })
+      .then(() => DataManager.getAll("foods"))
+      .then(foods => {
+        this.setState({ foods: foods });
+      })
+      .then(() => this.makeMacrosArrs());
+  };
+
   makeMacrosArrs = () => {
     // console.log("makeMacrosArrs");
     let fatCount = [];
@@ -165,6 +180,7 @@ class AppViews extends Component {
                   proteinSoFar={this.state.proteinSoFar}
                   users={this.state.users}
                   updateUser={this.updateUser}
+                  revertUserCounts={this.revertUserCounts}
                 />
               );
             } else {
