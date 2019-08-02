@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 import DataManager from "../module/DataManager";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
-import FoodEditForm from "./foods/FoodEditForm";
+// import FoodEditForm from "./foods/FoodEditForm";
 import FoodForm from "./foods/FoodForm";
 
 class AppViews extends Component {
@@ -22,10 +22,11 @@ class AppViews extends Component {
   revertUserCounts = () => {
     return DataManager.getSorted("foods", sessionStorage.getItem("userId"))
       .then(foods => {
-        foods.forEach(food => {
+        let newFoodsArr = foods.map(food => {
           food.count = 0;
-          this.updateFood(food);
+          return this.updateFood(food);
         });
+        return Promise.all(newFoodsArr);
       })
       .then(() => DataManager.getAll("foods"))
       .then(foods => {

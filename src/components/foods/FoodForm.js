@@ -32,9 +32,9 @@ export default class FoodForm extends Component {
       count: Number(this.state.count),
       date: d.getDate()
     };
-    let newCount = {
-      foodId: Number(this.state.id)
-    };
+    // let newCount = {
+    //   foodId: Number(this.state.id)
+    // };
 
     this.props
       .addFood(newFood)

@@ -31,7 +31,7 @@ export default class FoodList extends Component {
 
     this.props
       .updateUser(editedUser)
-      .then(() => this.props.history.push("/foods"));
+      // .then(() => this.props.history.push("/foods"));
   };
 
   activateIncrease = () => {
@@ -78,9 +78,10 @@ export default class FoodList extends Component {
           className="btn btn-secondary btn-sm"
           onClick={() => {
             // localStorage.setItem("weight", this.state.weight);
-            this.updateExistingUser().then(() =>
-              this.props.history.push("/foods")
-            );
+            this.updateExistingUser()
+            // .then(() =>
+            //   this.props.history.push("/foods")
+            // );
           }}
         >
           Save Weight
