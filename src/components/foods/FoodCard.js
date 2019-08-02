@@ -101,7 +101,7 @@ export default class FoodCard extends Component {
             {this.props.food.name}
             <br />
             <Badge variant="light" onChange={this.changeParent}>
-              {this.state.count}
+              {this.props.food.count}
             </Badge>
           </button>
         </div>

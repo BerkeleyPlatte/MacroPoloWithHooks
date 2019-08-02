@@ -10,7 +10,8 @@ export default class FoodList extends Component {
   state = {
     action: "add",
     weight: 0,
-    userName: ""
+    userName: "",
+    count: 0
   };
 
   handleFieldChange = evt => {
@@ -30,7 +31,7 @@ export default class FoodList extends Component {
 
     this.props
       .updateUser(editedUser)
-      .then(() => this.props.history.push("/foods"));
+      // .then(() => this.props.history.push("/foods"));
   };
 
   activateIncrease = () => {
@@ -77,7 +78,10 @@ export default class FoodList extends Component {
           className="btn btn-secondary btn-sm"
           onClick={() => {
             // localStorage.setItem("weight", this.state.weight);
-            this.updateExistingUser();
+            this.updateExistingUser()
+            // .then(() =>
+            //   this.props.history.push("/foods")
+            // );
           }}
         >
           Save Weight
@@ -170,7 +174,7 @@ export default class FoodList extends Component {
               </ToggleButton> */}
             </ButtonGroup>
           </div>
-          <section className="foods">
+          <section className="foods block-example border border-dark">
             {this.props.foods
               .filter(
                 food =>
@@ -187,8 +191,21 @@ export default class FoodList extends Component {
                   carbSoFar={this.props.carbSoFar}
                   proteinSoFar={this.props.proteinSoFar}
                   makeMacrosArrs={this.props.makeMacrosArrs}
+                  revertUserCounts={this.props.revertUserCounts}
                 />
               ))}
+          </section>
+          <section>
+            <button
+              type="button"
+              className="btn btn-secondary btn-sm"
+              onClick={() => {
+                // localStorage.setItem("weight", this.state.weight);
+                this.props.revertUserCounts();
+              }}
+            >
+              Clear
+            </button>
           </section>
         </React.Fragment>
       </div>
