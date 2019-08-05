@@ -168,27 +168,19 @@ export default class FoodList extends Component {
               <tr>
                 <td>Fat</td>
                 <td>{localStorage.getItem("fatSoFar")}</td>
-                <td>
-                  {(fatGoal - localStorage.getItem("fatSoFar")).toFixed(1)}
-                </td>
-                {fatGoal}
+                <td>{(fatGoal-localStorage.getItem("fatSoFar")).toFixed(1)}</td>
+                <td>{fatGoal}</td>
               </tr>
               <tr>
                 <td>Carbs</td>
                 <td>{localStorage.getItem("carbSoFar")}</td>
-                <td>
-                  {(carbGoal - localStorage.getItem("carbSoFar")).toFixed(1)}
-                </td>
+                <td>{(carbGoal-localStorage.getItem("carbSoFar")).toFixed(1)}</td>
                 <td>{carbGoal}</td>
               </tr>
               <tr>
                 <td>Protein</td>
                 <td>{localStorage.getItem("proteinSoFar")}</td>
-                <td>
-                  {(proteinGoal - localStorage.getItem("proteinSoFar")).toFixed(
-                    1
-                  )}
-                </td>
+                <td>{(proteinGoal-localStorage.getItem("proteinSoFar")).toFixed(1)}</td>
                 <td>{proteinGoal}</td>
               </tr>
             </tbody>

@@ -186,7 +186,7 @@
       "carb": 3,
       "protein": 24,
       "date": 5,
-      "count": 2
+      "count": 0
     },
     {
       "id": 47,
@@ -196,7 +196,7 @@
       "carb": 12,
       "protein": 0,
       "date": 5,
-      "count": 1
+      "count": 0
     },
     {
       "id": 48,
@@ -206,17 +206,17 @@
       "carb": 1,
       "protein": 9,
       "date": 5,
-      "count": 1
+      "count": 0
     },
     {
       "id": 49,
       "userId": 1,
-      "name": "ice cream ",
+      "name": "ice cream",
       "fat": 20,
       "carb": 40,
       "protein": 5,
       "date": 5,
-      "count": 0
+      "count": 1
     }
   ]
 }
