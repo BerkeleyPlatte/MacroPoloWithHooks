@@ -29,9 +29,8 @@ export default class FoodList extends Component {
       weight: this.state.weight
     };
 
-    this.props
-      .updateUser(editedUser)
-      // .then(() => this.props.history.push("/foods"));
+    this.props.updateUser(editedUser);
+    // .then(() => this.props.history.push("/foods"));
   };
 
   activateIncrease = () => {
@@ -78,7 +77,7 @@ export default class FoodList extends Component {
           className="btn btn-secondary btn-sm"
           onClick={() => {
             // localStorage.setItem("weight", this.state.weight);
-            this.updateExistingUser()
+            this.updateExistingUser();
             // .then(() =>
             //   this.props.history.push("/foods")
             // );
@@ -86,6 +85,75 @@ export default class FoodList extends Component {
         >
           Save Weight
         </button>
+        <section className="foods block-example border border-dark">
+          {this.props.foods
+            .filter(
+              food =>
+                Number(food.userId) === Number(sessionStorage.getItem("userId"))
+            )
+            .map(food => (
+              <FoodCard
+                key={food.id}
+                food={food}
+                action={this.state.action}
+                {...this.props}
+                fatSoFar={this.props.fatSoFar}
+                carbSoFar={this.props.carbSoFar}
+                proteinSoFar={this.props.proteinSoFar}
+                makeMacrosArrs={this.props.makeMacrosArrs}
+                revertUserCounts={this.props.revertUserCounts}
+              />
+            ))}
+        </section>
+        <React.Fragment>
+          <div className="d-flex flex-column" />
+          <div className="foodsButton">
+            <button
+              type="button"
+              className="btn btn-success"
+              onClick={() => {
+                this.props.history.push("/foods/new");
+              }}
+            >
+              Create Food
+            </button>
+            <ButtonGroup toggle className="mt-3">
+              <ToggleButton
+                onClick={this.activateIncrease}
+                type="radio"
+                name="radio"
+                defaultChecked
+                value="1"
+              >
+                Add
+              </ToggleButton>
+              <ToggleButton
+                onClick={this.activateDecrease}
+                type="radio"
+                name="radio"
+                value="2"
+              >
+                Subtract
+              </ToggleButton>
+              <ToggleButton
+                onClick={this.activateDelete}
+                type="radio"
+                name="radio"
+                value="3"
+              >
+                Delete
+              </ToggleButton>
+              {/* <ToggleButton
+                onClick={this.activateEdit}
+                type="radio"
+                name="radio"
+                value="4"
+              >
+                Edit
+              </ToggleButton> */}
+            </ButtonGroup>
+          </div>
+        </React.Fragment>
         <div>
           <Table striped bordered hover size="sm">
             <thead>
@@ -126,88 +194,19 @@ export default class FoodList extends Component {
             </tbody>
           </Table>
         </div>
-        <React.Fragment>
-          <div className="d-flex flex-column" />
-          <div className="foodsButton">
-            <button
-              type="button"
-              className="btn btn-success"
-              onClick={() => {
-                this.props.history.push("/foods/new");
-              }}
-            >
-              Add Food
-            </button>
-            <ButtonGroup toggle className="mt-3">
-              <ToggleButton
-                onClick={this.activateIncrease}
-                type="radio"
-                name="radio"
-                defaultChecked
-                value="1"
-              >
-                Add
-              </ToggleButton>
-              <ToggleButton
-                onClick={this.activateDecrease}
-                type="radio"
-                name="radio"
-                value="2"
-              >
-                Remove
-              </ToggleButton>
-              <ToggleButton
-                onClick={this.activateDelete}
-                type="radio"
-                name="radio"
-                value="3"
-              >
-                Delete
-              </ToggleButton>
-              {/* <ToggleButton
-                onClick={this.activateEdit}
-                type="radio"
-                name="radio"
-                value="4"
-              >
-                Edit
-              </ToggleButton> */}
-            </ButtonGroup>
-          </div>
-          <section className="foods block-example border border-dark">
-            {this.props.foods
-              .filter(
-                food =>
-                  Number(food.userId) ===
-                  Number(sessionStorage.getItem("userId"))
-              )
-              .map(food => (
-                <FoodCard
-                  key={food.id}
-                  food={food}
-                  action={this.state.action}
-                  {...this.props}
-                  fatSoFar={this.props.fatSoFar}
-                  carbSoFar={this.props.carbSoFar}
-                  proteinSoFar={this.props.proteinSoFar}
-                  makeMacrosArrs={this.props.makeMacrosArrs}
-                  revertUserCounts={this.props.revertUserCounts}
-                />
-              ))}
-          </section>
-          <section>
-            <button
-              type="button"
-              className="btn btn-secondary btn-sm"
-              onClick={() => {
-                // localStorage.setItem("weight", this.state.weight);
-                this.props.revertUserCounts();
-              }}
-            >
-              Clear
-            </button>
-          </section>
-        </React.Fragment>
+
+        <section>
+          <button
+            type="button"
+            className="btn btn-secondary btn-sm"
+            onClick={() => {
+              // localStorage.setItem("weight", this.state.weight);
+              this.props.revertUserCounts();
+            }}
+          >
+            Clear
+          </button>
+        </section>
       </div>
     );
   }
