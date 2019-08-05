@@ -23,9 +23,9 @@ class AppViews extends Component {
     return DataManager.getSorted("foods", sessionStorage.getItem("userId"))
       .then(foods => {
         let newFoodsArr = foods.map(food => {
-          console.log("beforeRevert", this.food.count)
+          // console.log("beforeRevert", this.food.count)
           food.count = 0;
-          console.log("afterRevert", this.food.count)
+          // console.log("afterRevert", this.food.count)
           return this.updateFood(food);
         });
         return Promise.all(newFoodsArr);
@@ -47,7 +47,7 @@ class AppViews extends Component {
       sessionStorage.getItem("userId")
     ).then(foods => {
       foods.forEach(food => {
-        console.log("makeMacrosArrs", this.food.count);
+        // console.log("makeMacrosArrs", this.food.count);
         fatCount.push(food.fat * food.count);
         carbCount.push(food.carb * food.count);
         proteinCount.push(food.protein * food.count);
