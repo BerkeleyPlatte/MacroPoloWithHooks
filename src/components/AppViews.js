@@ -33,10 +33,10 @@ class AppViews extends Component {
       })
       .then(() => DataManager.getAll("foods"))
       .then(foods => {
-        console.log("foods", foods)
         this.setState({ foods: foods });
         // this.props.Phistory.push("/foods")
       })
+      .then(() => console.log(this.state.foods))
       .then(() => this.makeMacrosArrs());
   };
 
@@ -220,7 +220,7 @@ class AppViews extends Component {
             );
           }}
         /> */}
-
+{/* 
         <Route
           exact
           path="/foods"
@@ -231,7 +231,7 @@ class AppViews extends Component {
               return <Redirect to="/" />;
             }
           }}
-        />
+        /> */}
       </React.Fragment>
     );
   }

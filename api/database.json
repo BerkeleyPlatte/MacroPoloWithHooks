@@ -148,16 +148,6 @@
       "count": 0
     },
     {
-      "id": 43,
-      "userId": 1,
-      "name": "ice cream",
-      "fat": 29,
-      "carb": 62,
-      "protein": 8,
-      "date": 5,
-      "count": 0
-    },
-    {
       "id": 44,
       "userId": 1,
       "name": "veggies",
@@ -186,6 +176,36 @@
       "protein": 24,
       "date": 5,
       "count": 0
+    },
+    {
+      "id": 47,
+      "userId": 1,
+      "name": "trilogy kombucha",
+      "fat": 0,
+      "carb": 12,
+      "protein": 0,
+      "date": 5,
+      "count": 0
+    },
+    {
+      "id": 48,
+      "userId": 1,
+      "name": "chz n pep",
+      "fat": 13,
+      "carb": 1,
+      "protein": 9,
+      "date": 5,
+      "count": 0
+    },
+    {
+      "id": 49,
+      "userId": 1,
+      "name": "ice cream ",
+      "fat": 20,
+      "carb": 40,
+      "protein": 5,
+      "date": 5,
+      "count": 1
     }
   ],
   "counts": []

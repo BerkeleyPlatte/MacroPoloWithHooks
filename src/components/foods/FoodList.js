@@ -209,7 +209,7 @@ export default class FoodList extends Component {
             onClick={() => {
               localStorage.setItem("weight", this.state.weight);
               // console.log("beforeRevertBtn", this.state.count);
-              this.setState({ count: 0 });
+              // this.setState({ count: 0 });
 
               this.props.revertUserCounts();
               // console.log("afterRevertBtn", this.state.count);
