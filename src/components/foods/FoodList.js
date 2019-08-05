@@ -34,18 +34,13 @@ export default class FoodList extends Component {
   };
 
   activateIncrease = () => {
-    // console.log("activateIncrease", this.state.count);
     this.setState({ action: "add" });
   };
 
   activateDecrease = () => {
-    // console.log("activateDecrease", this.state.count);
-
     this.setState({ action: "remove" });
   };
   activateDelete = () => {
-    // console.log("activateDelete", this.state.count);
-
     this.setState({ action: "delete" });
   };
   activateEdit = () => {
@@ -53,8 +48,6 @@ export default class FoodList extends Component {
   };
 
   componentDidMount() {
-    // console.log("FoodListDidMount", this.state.count);
-
     return DataManager.get("users", sessionStorage.getItem("userId")).then(
       user => {
         this.setState({
@@ -208,11 +201,9 @@ export default class FoodList extends Component {
             className="btn btn-secondary btn-sm"
             onClick={() => {
               localStorage.setItem("weight", this.state.weight);
-              // console.log("beforeRevertBtn", this.state.count);
               // this.setState({ count: 0 });
 
               this.props.revertUserCounts();
-              // console.log("afterRevertBtn", this.state.count);
             }}
           >
             Clear

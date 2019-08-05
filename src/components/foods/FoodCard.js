@@ -6,7 +6,7 @@ import DataManager from "../../module/DataManager";
 
 export default class FoodCard extends Component {
   state = {
-    count: this.props.food.count,
+    count: 0,
     userId: "",
     name: "",
     fat: 0,
@@ -22,7 +22,6 @@ export default class FoodCard extends Component {
   };
 
   updateCount = () => {
-    // console.log("updateCount");
     let editedFood = {
       id: this.props.food.id,
       userId: Number(sessionStorage.getItem("userId")),
@@ -34,14 +33,12 @@ export default class FoodCard extends Component {
       count: this.state.count
     };
     this.props.updateFood(editedFood).then(() => {
-      console.log("updateCount", this.state.count, this.props.food.count);
       this.props.history.push("/foods");
       this.props.makeMacrosArrs();
     });
   };
 
   componentDidMount() {
-    console.log("foodCardDidMount", this.state.count, this.props.food.count);
     return DataManager.get("foods", this.props.food.id).then(food => {
       this.setState({
         userId: food.userId,
@@ -56,22 +53,18 @@ export default class FoodCard extends Component {
   }
 
   increaseCount = () => {
-    // console.log("increaseCount");
-    this.setState({ count: this.state.count + 1 }, () => {
+    this.setState({ count: this.props.food.count + 1 }, () => {
       this.updateCount();
     });
-    console.log("increaseCount", this.state.count, this.props.food.count);
   };
 
   decreaseCount = () => {
-    // console.log("decreaseCount");
-    this.setState({ count: this.state.count - 1 }, () => {
+    this.setState({ count: this.props.food.count - 1 }, () => {
       this.updateCount();
     });
-    if (Number(this.state.count < 1)) {
+    if (Number(this.props.food.count < 1)) {
       this.setState({ count: 0 });
     }
-    console.log("decreaseCount", this.state.count, this.props.food.count);
   };
 
   clickParent = () => {
@@ -86,16 +79,9 @@ export default class FoodCard extends Component {
       // } else if (this.props.action === "edit") {
       //   this.props.history.push(`/foods/${this.props.food.id}/edit`);
     }
-    console.log("clickParent", this.state.count, this.props.food.count);
   };
 
-  // changeParent = () => {
-  //   this.handleFieldChange();
-  //   this.updateCount();
-  // };
-
   render() {
-    console.log("foodCard is rendering")
     return (
       <div>
         <div key={this.props.food.id} className="card bg-light w-auto">

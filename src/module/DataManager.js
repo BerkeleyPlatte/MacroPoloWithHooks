@@ -22,7 +22,6 @@ export default Object.create(null, {
 
   delete: {
     value: function(resource, id) {
-    //   console.log("id", id);
       return fetch(`${remoteURL}/${resource}/${id}`, {
         method: "DELETE",
         headers: {

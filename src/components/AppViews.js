@@ -23,25 +23,20 @@ class AppViews extends Component {
     return DataManager.getSorted("foods", sessionStorage.getItem("userId"))
       .then(foods => {
         let newFoodsArr = foods.map(food => {
-          // console.log("beforeRevert", this.food.count)
           food.count = 0;
-          // console.log("afterRevert", this.food.count)
           return this.updateFood(food);
         });
-        console.log("newfoodsarr", newFoodsArr)
         return Promise.all(newFoodsArr);
       })
       .then(() => DataManager.getAll("foods"))
       .then(foods => {
         this.setState({ foods: foods });
-        // this.props.Phistory.push("/foods")
+        // this.props.history.push("/foods")
       })
-      .then(() => console.log(this.state.foods))
       .then(() => this.makeMacrosArrs());
   };
 
   makeMacrosArrs = () => {
-    // console.log("makeMacrosArrs");
     let fatCount = [];
     let carbCount = [];
     let proteinCount = [];
@@ -50,11 +45,9 @@ class AppViews extends Component {
       sessionStorage.getItem("userId")
     ).then(foods => {
       foods.forEach(food => {
-        // console.log("makeMacrosArrs", this.food.count);
         fatCount.push(food.fat * food.count);
         carbCount.push(food.carb * food.count);
         proteinCount.push(food.protein * food.count);
-        // console.log(fatCount);
       });
       let fatSum = fatCount.reduce((curr, next) => curr + next, 0);
       let carbSum = carbCount.reduce((curr, next) => curr + next, 0);
@@ -67,14 +60,11 @@ class AppViews extends Component {
         carbSoFar: carbSum,
         proteinSoFar: proteinSum
       });
-      //   console.log(this.state.fatSoFar);
     });
   };
 
   componentDidMount() {
-    // console.log("appViewsDidMount");
     // this.makeMacrosArrs();
-    // console.log("comp did mount");
     const newState = {};
 
     DataManager.getAll("users")
