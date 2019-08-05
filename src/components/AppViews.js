@@ -28,11 +28,14 @@ class AppViews extends Component {
           // console.log("afterRevert", this.food.count)
           return this.updateFood(food);
         });
+        console.log("newfoodsarr", newFoodsArr)
         return Promise.all(newFoodsArr);
       })
       .then(() => DataManager.getAll("foods"))
       .then(foods => {
+        console.log("foods", foods)
         this.setState({ foods: foods });
+        // this.props.Phistory.push("/foods")
       })
       .then(() => this.makeMacrosArrs());
   };

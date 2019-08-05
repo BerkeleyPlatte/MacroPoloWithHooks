@@ -6,7 +6,7 @@ import DataManager from "../../module/DataManager";
 
 export default class FoodCard extends Component {
   state = {
-    count: 0,
+    count: this.props.food.count,
     userId: "",
     name: "",
     fat: 0,
@@ -34,10 +34,10 @@ export default class FoodCard extends Component {
       count: this.state.count
     };
     this.props.updateFood(editedFood).then(() => {
+      console.log("updateCount", this.state.count, this.props.food.count);
       this.props.history.push("/foods");
       this.props.makeMacrosArrs();
     });
-    console.log("updateCount", this.state.count, this.props.food.count);
   };
 
   componentDidMount() {
@@ -95,6 +95,7 @@ export default class FoodCard extends Component {
   // };
 
   render() {
+    console.log("foodCard is rendering")
     return (
       <div>
         <div key={this.props.food.id} className="card bg-light w-auto">

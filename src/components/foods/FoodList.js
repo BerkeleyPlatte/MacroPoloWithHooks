@@ -10,8 +10,8 @@ export default class FoodList extends Component {
   state = {
     action: "add",
     weight: 0,
-    userName: "",
-    count: 0
+    userName: ""
+    // count: 0
   };
 
   handleFieldChange = evt => {
@@ -34,17 +34,17 @@ export default class FoodList extends Component {
   };
 
   activateIncrease = () => {
-    console.log("activateIncrease", this.state.count);
+    // console.log("activateIncrease", this.state.count);
     this.setState({ action: "add" });
   };
 
   activateDecrease = () => {
-    console.log("activateDecrease", this.state.count);
+    // console.log("activateDecrease", this.state.count);
 
     this.setState({ action: "remove" });
   };
   activateDelete = () => {
-    console.log("activateDelete", this.state.count);
+    // console.log("activateDelete", this.state.count);
 
     this.setState({ action: "delete" });
   };
@@ -53,7 +53,7 @@ export default class FoodList extends Component {
   };
 
   componentDidMount() {
-    console.log("FoodListDidMount", this.state.count);
+    // console.log("FoodListDidMount", this.state.count);
 
     return DataManager.get("users", sessionStorage.getItem("userId")).then(
       user => {
@@ -207,11 +207,12 @@ export default class FoodList extends Component {
             type="button"
             className="btn btn-secondary btn-sm"
             onClick={() => {
-              // localStorage.setItem("weight", this.state.weight);
-              console.log("beforeRevertBtn", this.state.count);
+              localStorage.setItem("weight", this.state.weight);
+              // console.log("beforeRevertBtn", this.state.count);
+              this.setState({ count: 0 });
 
               this.props.revertUserCounts();
-              console.log("afterRevertBtn", this.state.count);
+              // console.log("afterRevertBtn", this.state.count);
             }}
           >
             Clear

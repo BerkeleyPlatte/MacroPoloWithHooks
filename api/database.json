@@ -118,16 +118,6 @@
       "count": 0
     },
     {
-      "id": 39,
-      "userId": 1,
-      "name": "On Shake",
-      "fat": 1.5,
-      "carb": 3,
-      "protein": 24,
-      "date": 3,
-      "count": 0
-    },
-    {
       "id": 40,
       "userId": 1,
       "name": "MP Shake",
@@ -185,7 +175,17 @@
       "carb": 0,
       "protein": 0,
       "date": 5,
-      "count": 2
+      "count": 0
+    },
+    {
+      "id": 46,
+      "userId": 1,
+      "name": "ON Shake",
+      "fat": 1.5,
+      "carb": 3,
+      "protein": 24,
+      "date": 5,
+      "count": 0
     }
   ],
   "counts": []
