@@ -1,14 +1,9 @@
 {
   "users": [
     {
-      "id": 1,
-      "userName": "berk",
-      "weight": "183"
-    },
-    {
       "id": 2,
       "userName": "paul",
-      "weight": "186",
+      "weight": "190",
       "password": "two"
     },
     {
@@ -34,6 +29,18 @@
       "weight": 0,
       "password": "steve",
       "id": 6
+    },
+    {
+      "id": 7,
+      "userName": "mo",
+      "weight": "100",
+      "password": "mo"
+    },
+    {
+      "id": 8,
+      "userName": "berkeley",
+      "weight": "183",
+      "password": "berk"
     }
   ],
   "foods": [
@@ -45,7 +52,7 @@
       "carb": 100,
       "protein": 100,
       "date": 1,
-      "count": 1
+      "count": 0
     },
     {
       "name": "thing",
@@ -118,83 +125,23 @@
       "count": 0
     },
     {
-      "id": 38,
-      "userId": 1,
-      "name": "beans 1/4cup",
-      "fat": 0,
-      "carb": 9.5,
-      "protein": 3.5,
-      "date": 2,
-      "count": 0
-    },
-    {
-      "id": 40,
-      "userId": 1,
-      "name": "MP Shake",
-      "fat": 2,
-      "carb": 5,
-      "protein": 25,
-      "date": 3,
-      "count": 0
-    },
-    {
-      "id": 41,
-      "userId": 1,
-      "name": "pumpkin seeds 1/4cup",
-      "fat": 17,
-      "carb": 4,
-      "protein": 10,
-      "date": 3,
-      "count": 0
-    },
-    {
-      "id": 42,
-      "userId": 1,
-      "name": "Chicken 4oz",
-      "fat": 2.5,
-      "carb": 0,
-      "protein": 22,
-      "date": 3,
-      "count": 0
-    },
-    {
-      "id": 44,
-      "userId": 1,
-      "name": "veggies",
-      "fat": 0,
-      "carb": 5,
-      "protein": 2,
-      "date": 5,
-      "count": 0
-    },
-    {
-      "id": 46,
-      "userId": 1,
-      "name": "ON Shake",
-      "fat": 1.5,
-      "carb": 3,
-      "protein": 24,
-      "date": 5,
-      "count": 0
-    },
-    {
-      "id": 47,
-      "userId": 1,
-      "name": "toast chee",
-      "fat": "110",
-      "carb": 25,
-      "protein": "10",
-      "count": 6
-    },
-    {
-      "id": 48,
-      "userId": 1,
-      "name": "testFood",
-      "fat": 1,
-      "carb": 1,
-      "protein": 1,
+      "id": 49,
+      "userId": 7,
+      "name": "yogurt",
+      "fat": 11,
+      "carb": 34,
+      "protein": 12,
       "date": 6,
-      "count": 1
+      "count": 0
+    },
+    {
+      "id": 50,
+      "userId": 7,
+      "name": "Belvita",
+      "fat": "8",
+      "carb": 35,
+      "protein": 4,
+      "count": 3
     }
   ]
 }

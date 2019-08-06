@@ -74,7 +74,7 @@ export default class FoodCard extends Component {
       this.decreaseCount();
     } else if (this.props.action === "delete") {
       this.props.deleteFood(this.props.food.id);
-      // this.updateCount();
+      this.updateCount();
       this.props.history.push("/foods");
       } else if (this.props.action === "edit") {
         this.props.history.push(`/foods/${this.props.food.id}/edit`);

@@ -10,8 +10,9 @@ export default class FoodList extends Component {
   state = {
     action: "add",
     weight: 0,
-    userName: ""
-    // count: 0
+    userName: "",
+    password: ""
+    
   };
 
   handleFieldChange = evt => {
@@ -26,7 +27,8 @@ export default class FoodList extends Component {
     let editedUser = {
       id: Number(sessionStorage.getItem("userId")),
       userName: this.state.userName,
-      weight: this.state.weight
+      weight: this.state.weight,
+      password: this.state.password
     };
 
     this.props.updateUser(editedUser);
@@ -52,7 +54,8 @@ export default class FoodList extends Component {
       user => {
         this.setState({
           userName: user.userName,
-          weight: user.weight
+          weight: user.weight,
+          password: user.password
         });
       }
     );

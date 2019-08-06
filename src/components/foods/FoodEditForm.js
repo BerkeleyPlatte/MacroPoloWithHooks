@@ -29,29 +29,44 @@ export default class FoodEditForm extends Component {
       protein: this.state.protein,
       count: this.state.count
     };
-
-    localStorage.setItem(
-      "fatSoFar",
-      Number(
-        this.props.fatSoFar -
-          this.state.fat * this.state.count +
-          editedFood.fat * this.state.count
-      )
-    );
-    this.props
-      .updateFood(editedFood)
-      .then(() =>
+    DataManager.get("foods", this.props.match.params.foodId)
+      .then(food => {
         localStorage.setItem(
           "fatSoFar",
-          Number(this.props.fatSoFar + editedFood.fat * editedFood.count)
+          Number(
+            (this.props.fatSoFar -
+              food.fat * food.count) +
+              editedFood.fat * editedFood.count
+          )
         )
-      )
+        localStorage.setItem(
+          "carbSoFar",
+          Number(
+            (this.props.carbSoFar -
+              food.carb * food.count) +
+              editedFood.carb * editedFood.count
+          )
+        )
+        localStorage.setItem(
+          "proteinSoFar",
+          Number(
+            (this.props.proteinSoFar -
+              food.protein * food.count) +
+              editedFood.protein * editedFood.count
+          )
+        )
+      })
+      .then(() =>
+        this.props
+          .updateFood(editedFood)
 
-      // .then(() => this.props.makeMacrosArrs)
-      .then(() => this.props.history.push("/foods"));
+          // .then(() => this.props.makeMacrosArrs)
+          .then(() => this.props.history.push("/foods"))
+      );
   };
 
   componentDidMount() {
+    console.log(this.props.match.params.foodId);
     return DataManager.get("foods", this.props.match.params.foodId).then(
       food => {
         this.setState({
