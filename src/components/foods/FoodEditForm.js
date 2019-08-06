@@ -32,7 +32,11 @@ export default class FoodEditForm extends Component {
 
     localStorage.setItem(
       "fatSoFar",
-      Number(this.props.fatSoFar - this.state.fat * this.state.count)
+      Number(
+        this.props.fatSoFar -
+          this.state.fat * this.state.count +
+          editedFood.fat * this.state.count
+      )
     );
     this.props
       .updateFood(editedFood)
