@@ -204,9 +204,9 @@ class AppViews extends Component {
             return (
               <FoodEditForm
                 {...props}
-                fatSum={this.state.fatSum}
-                carbSum={this.state.carbSum}
-                proteinSum={this.state.proteinSum}
+                fatSoFar={this.state.fatSoFar}
+                carbSoFar={this.state.carbSoFar}
+                proteinSoFar={this.state.proteinSoFar}
                 makeMacrosArrs={this.props.makeMacrosArrs}
                 foods={this.state.foods}
                 updateFood={this.updateFood}

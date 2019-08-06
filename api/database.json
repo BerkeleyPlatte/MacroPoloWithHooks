@@ -181,10 +181,20 @@
       "id": 47,
       "userId": 1,
       "name": "toast chee",
-      "fat": "11",
+      "fat": "100",
       "carb": 25,
       "protein": "10",
-      "count": 2
+      "count": 1
+    },
+    {
+      "id": 48,
+      "userId": 1,
+      "name": "testFood",
+      "fat": 1,
+      "carb": 1,
+      "protein": 1,
+      "date": 6,
+      "count": 1
     }
   ]
 }
