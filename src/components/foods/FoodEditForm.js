@@ -7,8 +7,8 @@ export default class FoodEditForm extends Component {
     name: "",
     carb: 0,
     fat: 0,
-    protein: 0
-
+    protein: 0,
+    count: 0
   };
 
   handleFieldChange = evt => {
@@ -26,7 +26,8 @@ export default class FoodEditForm extends Component {
       name: this.state.name,
       fat: this.state.fat,
       carb: this.state.carb,
-      protein: this.state.protein
+      protein: this.state.protein,
+      count: this.state.count
     };
 
     this.props
@@ -42,7 +43,8 @@ export default class FoodEditForm extends Component {
           name: food.name,
           fat: food.fat,
           carb: food.carb,
-          protein: food.protein
+          protein: food.protein,
+          count: food.count
         });
       }
     );

@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 import DataManager from "../module/DataManager";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
-// import FoodEditForm from "./foods/FoodEditForm";
+import FoodEditForm from "./foods/FoodEditForm";
 import FoodForm from "./foods/FoodForm";
 
 class AppViews extends Component {
@@ -198,18 +198,22 @@ class AppViews extends Component {
             );
           }}
         />
-        {/* <Route
+        <Route
           path="/foods/:foodId(\d+)/edit"
           render={props => {
             return (
               <FoodEditForm
                 {...props}
+                fatSum={this.state.fatSum}
+                carbSum={this.state.carbSum}
+                proteinSum={this.state.proteinSum}
+                makeMacrosArrs={this.props.makeMacrosArrs}
                 foods={this.state.foods}
                 updateFood={this.updateFood}
               />
             );
           }}
-        /> */}
+        />
 {/* 
         <Route
           exact

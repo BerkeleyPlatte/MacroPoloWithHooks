@@ -143,14 +143,14 @@ export default class FoodList extends Component {
               >
                 Delete
               </ToggleButton>
-              {/* <ToggleButton
+              <ToggleButton
                 onClick={this.activateEdit}
                 type="radio"
                 name="radio"
                 value="4"
               >
                 Edit
-              </ToggleButton> */}
+              </ToggleButton>
             </ButtonGroup>
           </div>
         </React.Fragment>
