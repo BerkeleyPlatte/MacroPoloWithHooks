@@ -33,40 +33,32 @@ export default class FoodEditForm extends Component {
       .then(food => {
         localStorage.setItem(
           "fatSoFar",
-          Number(
-            (this.props.fatSoFar -
-              food.fat * food.count) +
-              editedFood.fat * editedFood.count
-          )
-        )
+          this.props.fatSoFar -
+            food.fat * food.count +
+            editedFood.fat * editedFood.count
+        );
         localStorage.setItem(
           "carbSoFar",
-          Number(
-            (this.props.carbSoFar -
-              food.carb * food.count) +
-              editedFood.carb * editedFood.count
-          )
-        )
+          this.props.carbSoFar -
+            food.carb * food.count +
+            editedFood.carb * editedFood.count
+        );
         localStorage.setItem(
           "proteinSoFar",
-          Number(
-            (this.props.proteinSoFar -
-              food.protein * food.count) +
-              editedFood.protein * editedFood.count
-          )
-        )
+          this.props.proteinSoFar -
+            food.protein * food.count +
+            editedFood.protein * editedFood.count
+        );
       })
       .then(() =>
         this.props
           .updateFood(editedFood)
 
-          // .then(() => this.props.makeMacrosArrs)
           .then(() => this.props.history.push("/foods"))
       );
   };
 
   componentDidMount() {
-    console.log(this.props.match.params.foodId);
     return DataManager.get("foods", this.props.match.params.foodId).then(
       food => {
         this.setState({

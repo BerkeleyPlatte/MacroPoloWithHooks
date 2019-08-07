@@ -22,7 +22,6 @@ export default class FoodList extends Component {
   };
 
   updateExistingUser = () => {
-    // evt.preventDefault();
 
     let editedUser = {
       id: Number(sessionStorage.getItem("userId")),
@@ -32,7 +31,6 @@ export default class FoodList extends Component {
     };
 
     this.props.updateUser(editedUser);
-    // .then(() => this.props.history.push("/foods"));
   };
 
   activateIncrease = () => {
@@ -63,9 +61,9 @@ export default class FoodList extends Component {
 
   render() {
     let weight = this.state.weight;
-    let fatGoal = (weight * 0.3).toFixed(1);
-    let carbGoal = (weight * 0.6).toFixed(1);
-    let proteinGoal = (weight * 1.4).toFixed(1);
+    let fatGoal = (weight * 0.334).toFixed(1);
+    let carbGoal = (weight * 0.75).toFixed(1);
+    let proteinGoal = (weight * 1.112).toFixed(1);
     return (
       <div>
         <label>Weight:</label>
@@ -79,11 +77,8 @@ export default class FoodList extends Component {
           type="button"
           className="btn btn-secondary btn-sm"
           onClick={() => {
-            // localStorage.setItem("weight", this.state.weight);
             this.updateExistingUser();
-            // .then(() =>
-            //   this.props.history.push("/foods")
-            // );
+            
           }}
         >
           Save Weight
@@ -196,7 +191,6 @@ export default class FoodList extends Component {
             className="btn btn-secondary btn-sm"
             onClick={() => {
               localStorage.setItem("weight", this.state.weight);
-              // this.setState({ count: 0 });
 
               this.props.revertUserCounts();
             }}

@@ -32,27 +32,15 @@ export default class FoodForm extends Component {
       count: Number(this.state.count),
       date: d.getDate()
     };
-    // let newCount = {
-    //   foodId: Number(this.state.id)
-    // };
+   
 
     this.props
       .addFood(newFood)
-      // .then(() => {
-      //   this.props.addCount(newCount);
-      // })
+     
       .then(() => this.props.history.push("/foods"))
      
   };
-  // constructNewCount = evt => {
-  //   evt.preventDefault();
-
-  // };
-
-  // bothConstructors = () => {
-  //   constructNewFood();
-  //   constructNewCount();
-  // };
+  
   render() {
     return (
       <React.Fragment>

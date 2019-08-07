@@ -31,7 +31,6 @@ class AppViews extends Component {
       .then(() => DataManager.getAll("foods"))
       .then(foods => {
         this.setState({ foods: foods });
-        // this.props.history.push("/foods")
       })
       .then(() => this.makeMacrosArrs());
   };
@@ -64,7 +63,6 @@ class AppViews extends Component {
   };
 
   componentDidMount() {
-    // this.makeMacrosArrs();
     const newState = {};
 
     DataManager.getAll("users")
@@ -207,14 +205,14 @@ class AppViews extends Component {
                 fatSoFar={this.state.fatSoFar}
                 carbSoFar={this.state.carbSoFar}
                 proteinSoFar={this.state.proteinSoFar}
-                makeMacrosArrs={this.props.makeMacrosArrs}
+                makeMacrosArrs={this.makeMacrosArrs}
                 foods={this.state.foods}
                 updateFood={this.updateFood}
               />
             );
           }}
         />
-{/* 
+        {/* 
         <Route
           exact
           path="/foods"

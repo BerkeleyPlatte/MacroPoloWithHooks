@@ -2,20 +2,17 @@ import React, { Component } from "react";
 import DataManager from "../../module/DataManager";
 
 export default class Login extends Component {
-  // Set initial state
   state = {
-    userName: "", 
+    userName: "",
     password: ""
   };
 
-  // Update state whenever an input field is edited
   handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
 
-  // Simplistic handler for login submit
   handleLogin = e => {
     e.preventDefault();
     DataManager.getAll("users").then(users => {
