@@ -33,19 +33,19 @@ export default class FoodEditForm extends Component {
       .then(food => {
         localStorage.setItem(
           "fatSoFar",
-          this.props.fatSoFar -
+          localStorage.getItem("fatSoFar") -
             food.fat * food.count +
             editedFood.fat * editedFood.count
         );
         localStorage.setItem(
           "carbSoFar",
-          this.props.carbSoFar -
+          localStorage.getItem("carbSoFar") -
             food.carb * food.count +
             editedFood.carb * editedFood.count
         );
         localStorage.setItem(
           "proteinSoFar",
-          this.props.proteinSoFar -
+          localStorage.getItem("proteinSoFar") -
             food.protein * food.count +
             editedFood.protein * editedFood.count
         );
@@ -80,7 +80,6 @@ export default class FoodEditForm extends Component {
           <div className="form-group">
             <label htmlFor="food">Food name</label>
             <input
-              autoFocus
               type="text"
               required
               placeholder={this.state.name}

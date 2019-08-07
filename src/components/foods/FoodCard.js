@@ -12,7 +12,7 @@ export default class FoodCard extends Component {
     fat: 0,
     carb: 0,
     protein: 0,
-    date: 0
+    date: ""
   };
 
   handleFieldChange = evt => {

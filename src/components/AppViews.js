@@ -8,6 +8,7 @@ import Register from "./auth/Register";
 import FoodEditForm from "./foods/FoodEditForm";
 import FoodForm from "./foods/FoodForm";
 
+// AppViews is the parent
 class AppViews extends Component {
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
