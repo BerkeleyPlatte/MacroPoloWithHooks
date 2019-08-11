@@ -2,25 +2,25 @@ import React, { Component } from "react";
 import DataManager from "../../module/DataManager";
 
 export default class Login extends Component {
-  // Set initial state
   state = {
-    userName: ""
+    userName: "",
+    password: ""
   };
 
-  // Update state whenever an input field is edited
   handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
 
-  // Simplistic handler for login submit
   handleLogin = e => {
     e.preventDefault();
     DataManager.getAll("users").then(users => {
       const singleUser = users.find(
         element =>
-          element.userName.toLowerCase() === this.state.userName.toLowerCase()
+          element.userName.toLowerCase() ===
+            this.state.userName.toLowerCase() &&
+          element.password.toLowerCase() === this.state.password.toLowerCase()
       );
       if (singleUser) {
         sessionStorage.setItem("userId", singleUser.id);
@@ -36,7 +36,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleLogin}>
+      <form className="justify-content-center" onSubmit={this.handleLogin}>
         <h1 className="h4 mb-3 font-weight-normal">Please Sign In</h1>
         <label htmlFor="inputUserName">User Name:&nbsp;</label>
         <input
@@ -44,6 +44,15 @@ export default class Login extends Component {
           type="text"
           id="userName"
           placeholder="User Name"
+          required=""
+        />
+        &nbsp;
+        <label htmlFor="inputPassword">Password:&nbsp;</label>
+        <input
+          onChange={this.handleFieldChange}
+          type="password"
+          id="password"
+          placeholder="Password"
           required=""
         />
         &nbsp;

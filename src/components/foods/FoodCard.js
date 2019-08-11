@@ -6,13 +6,13 @@ import DataManager from "../../module/DataManager";
 
 export default class FoodCard extends Component {
   state = {
-    count: Number(this.props.food.count),
-    userId: this.props.food.userId,
-    name: this.props.food.name,
-    fat: this.props.food.fat,
-    carb: this.props.food.carb,
-    protein: this.props.food.protein,
-    date: this.props.food.date
+    count: 0,
+    userId: "",
+    name: "",
+    fat: 0,
+    carb: 0,
+    protein: 0,
+    date: ""
   };
 
   handleFieldChange = evt => {
@@ -22,7 +22,6 @@ export default class FoodCard extends Component {
   };
 
   updateCount = () => {
-    // console.log("updateCount");
     let editedFood = {
       id: this.props.food.id,
       userId: Number(sessionStorage.getItem("userId")),
@@ -40,36 +39,30 @@ export default class FoodCard extends Component {
   };
 
   componentDidMount() {
-    // console.log("foodCardDidMount");
-    DataManager.get("foods", this.props.food.id).then(evt => {
+    return DataManager.get("foods", this.props.food.id).then(food => {
       this.setState({
-        userId: evt.userId,
-        name: evt.name,
-        date: evt.date,
-        fat: evt.fat,
-        carb: evt.carb,
-        protein: evt.protein,
-        count: evt.count,
-        id: this.props.food.id
+        userId: food.userId,
+        name: food.name,
+        date: food.date,
+        fat: food.fat,
+        carb: food.carb,
+        protein: food.protein,
+        count: food.count
       });
     });
   }
 
   increaseCount = () => {
-    // console.log("increaseCount");
-    this.setState({ count: this.state.count + 1 }, () => {
+    this.setState({ count: this.props.food.count + 1 }, () => {
       this.updateCount();
     });
-    // console.log(this.state.count + 1);
   };
 
   decreaseCount = () => {
-    // console.log("decreaseCount");
-    this.setState({ count: this.state.count - 1 }, () => {
+    this.setState({ count: this.props.food.count - 1 }, () => {
       this.updateCount();
     });
-    // console.log(this.state.count - 1);
-    if (Number(this.state.count < 1)) {
+    if (Number(this.props.food.count < 1)) {
       this.setState({ count: 0 });
     }
   };
@@ -83,14 +76,9 @@ export default class FoodCard extends Component {
       this.props.deleteFood(this.props.food.id);
       this.updateCount();
       this.props.history.push("/foods");
-    // } else if (this.props.action === "edit") {
-    //   this.props.history.push(`/foods/${this.props.food.id}/edit`);
+      } else if (this.props.action === "edit") {
+        this.props.history.push(`/foods/${this.props.food.id}/edit`);
     }
-  };
-
-  changeParent = () => {
-    this.handleFieldChange();
-    this.updateCount();
   };
 
   render() {

@@ -5,9 +5,10 @@ import { withRouter } from "react-router";
 import DataManager from "../module/DataManager";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
-// import FoodEditForm from "./foods/FoodEditForm";
+import FoodEditForm from "./foods/FoodEditForm";
 import FoodForm from "./foods/FoodForm";
 
+// AppViews is the parent
 class AppViews extends Component {
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
@@ -36,7 +37,6 @@ class AppViews extends Component {
   };
 
   makeMacrosArrs = () => {
-    // console.log("makeMacrosArrs");
     let fatCount = [];
     let carbCount = [];
     let proteinCount = [];
@@ -45,11 +45,9 @@ class AppViews extends Component {
       sessionStorage.getItem("userId")
     ).then(foods => {
       foods.forEach(food => {
-        // console.log(food);
         fatCount.push(food.fat * food.count);
         carbCount.push(food.carb * food.count);
         proteinCount.push(food.protein * food.count);
-        // console.log(fatCount);
       });
       let fatSum = fatCount.reduce((curr, next) => curr + next, 0);
       let carbSum = carbCount.reduce((curr, next) => curr + next, 0);
@@ -62,14 +60,10 @@ class AppViews extends Component {
         carbSoFar: carbSum,
         proteinSoFar: proteinSum
       });
-      //   console.log(this.state.fatSoFar);
     });
   };
 
   componentDidMount() {
-    // console.log("appViewsDidMount");
-    // this.makeMacrosArrs();
-    // console.log("comp did mount");
     const newState = {};
 
     DataManager.getAll("users")
@@ -203,19 +197,23 @@ class AppViews extends Component {
             );
           }}
         />
-        {/* <Route
+        <Route
           path="/foods/:foodId(\d+)/edit"
           render={props => {
             return (
               <FoodEditForm
                 {...props}
+                fatSoFar={this.state.fatSoFar}
+                carbSoFar={this.state.carbSoFar}
+                proteinSoFar={this.state.proteinSoFar}
+                makeMacrosArrs={this.makeMacrosArrs}
                 foods={this.state.foods}
                 updateFood={this.updateFood}
               />
             );
           }}
-        /> */}
-
+        />
+        {/* 
         <Route
           exact
           path="/foods"
@@ -226,7 +224,7 @@ class AppViews extends Component {
               return <Redirect to="/" />;
             }
           }}
-        />
+        /> */}
       </React.Fragment>
     );
   }

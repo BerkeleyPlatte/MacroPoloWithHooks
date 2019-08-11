@@ -4,7 +4,8 @@ import DataManager from "../../module/DataManager";
 export default class Register extends Component {
   state = {
     userName: "",
-    weight: 0
+    weight: 0,
+    password: ""
   };
 
   handleFieldChange = evt => {
@@ -27,12 +28,13 @@ export default class Register extends Component {
       } else {
         let newUser = {
           userName: this.state.userName,
-          weight: this.state.weight
+          weight: this.state.weight,
+          password: this.state.password
         };
         this.props.addUser(newUser).then(() =>
           DataManager.getAll("users")
             .then(users =>
-              users.find(user => user.userName === this.state.userName)
+              users.find(user => user.password === this.state.password)
             )
             .then(foundUser => {
               sessionStorage.setItem("userId", foundUser.id);
@@ -53,6 +55,15 @@ export default class Register extends Component {
           type="userName"
           id="userName"
           placeholder="User Name"
+          required=""
+        />
+        <br />
+        <label htmlFor="inputPassword">Password:&nbsp;</label>
+        <input
+          onChange={this.handleFieldChange}
+          type="password"
+          id="password"
+          placeholder="Password"
           required=""
         />
         <br />

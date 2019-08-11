@@ -7,8 +7,8 @@ export default class FoodEditForm extends Component {
     name: "",
     carb: 0,
     fat: 0,
-    protein: 0
-
+    protein: 0,
+    count: 0
   };
 
   handleFieldChange = evt => {
@@ -26,12 +26,36 @@ export default class FoodEditForm extends Component {
       name: this.state.name,
       fat: this.state.fat,
       carb: this.state.carb,
-      protein: this.state.protein
+      protein: this.state.protein,
+      count: this.state.count
     };
+    DataManager.get("foods", this.props.match.params.foodId)
+      .then(food => {
+        localStorage.setItem(
+          "fatSoFar",
+          localStorage.getItem("fatSoFar") -
+            food.fat * food.count +
+            editedFood.fat * editedFood.count
+        );
+        localStorage.setItem(
+          "carbSoFar",
+          localStorage.getItem("carbSoFar") -
+            food.carb * food.count +
+            editedFood.carb * editedFood.count
+        );
+        localStorage.setItem(
+          "proteinSoFar",
+          localStorage.getItem("proteinSoFar") -
+            food.protein * food.count +
+            editedFood.protein * editedFood.count
+        );
+      })
+      .then(() =>
+        this.props
+          .updateFood(editedFood)
 
-    this.props
-      .updateFood(editedFood)
-      .then(() => this.props.history.push("/foods"));
+          .then(() => this.props.history.push("/foods"))
+      );
   };
 
   componentDidMount() {
@@ -42,7 +66,8 @@ export default class FoodEditForm extends Component {
           name: food.name,
           fat: food.fat,
           carb: food.carb,
-          protein: food.protein
+          protein: food.protein,
+          count: food.count
         });
       }
     );
@@ -55,7 +80,6 @@ export default class FoodEditForm extends Component {
           <div className="form-group">
             <label htmlFor="food">Food name</label>
             <input
-              autoFocus
               type="text"
               required
               placeholder={this.state.name}
