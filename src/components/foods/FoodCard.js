@@ -84,11 +84,11 @@ export default class FoodCard extends Component {
   render() {
     return (
       <div>
-        <div key={this.props.food.id} className="card bg-light w-auto">
-          <button variant="primary" onClick={this.clickParent}>
+        <div key={this.props.food.id} className="thing shadow rounded w-auto">
+          <button className="btn btn-outline-primary" onClick={this.clickParent}>
             {this.props.food.name}
             <br />
-            <Badge variant="light" onChange={this.changeParent}>
+            <Badge onChange={this.changeParent}>
               {this.props.food.count}
             </Badge>
           </button>

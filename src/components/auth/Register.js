@@ -47,37 +47,45 @@ export default class Register extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleRegister}>
-        <h1 className="h3 mb-3 font-weight-normal">Please Sign Up</h1>
-        <label htmlFor="inputPassword">User Name:&nbsp;</label>
-        <input
-          onChange={this.handleFieldChange}
-          type="userName"
-          id="userName"
-          placeholder="User Name"
-          required=""
-        />
+      <form className="d-flex flex-column" onSubmit={this.handleRegister}>
+        <h1 className="d-flex justify-content-center h3 mb-3 font-weight-normal">
+          Please Sign Up
+        </h1>
+        <div className="d-flex justify-content-center">
+          <label htmlFor="inputPassword">User Name:&nbsp;</label>
+          <input
+            onChange={this.handleFieldChange}
+            type="userName"
+            id="userName"
+            placeholder="User Name"
+            required=""
+          />
+        </div>
         <br />
-        <label htmlFor="inputPassword">Password:&nbsp;</label>
-        <input
-          onChange={this.handleFieldChange}
-          type="password"
-          id="password"
-          placeholder="Password"
-          required=""
-        />
+        <div className="d-flex justify-content-center">
+          <label htmlFor="inputPassword">Password:&nbsp;</label>
+          <input
+            onChange={this.handleFieldChange}
+            type="password"
+            id="password"
+            placeholder="Password"
+            required=""
+          />
+        </div>
         <br />
-        <button type="submit" className="btn btn-info btn-sm login-button">
-          Register
-        </button>
-        <br />
-        <button
-          type="button"
-          className="btn btn-link"
-          onClick={() => this.props.history.push("/")}
-        >
-          Back to Login Page
-        </button>
+        <div className="d-flex justify-content-center">
+          <button type="submit" className="btn btn-info btn-sm login-button">
+            Register
+          </button>
+          <br />
+          <button
+            type="button"
+            className="btn btn-link"
+            onClick={() => this.props.history.push("/")}
+          >
+            Back to Login Page
+          </button>
+        </div>
       </form>
     );
   }

@@ -92,8 +92,9 @@ export default class FoodForm extends Component {
             onClick={this.constructNewFood}
             className="btn btn-primary"
           >
-            Submit
+            Create
           </button>
+          &nbsp;
           <button
             type="submit"
             onClick={() => this.props.history.push("/foods")}

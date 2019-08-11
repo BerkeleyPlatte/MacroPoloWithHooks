@@ -66,16 +66,20 @@ export default class FoodList extends Component {
     let proteinGoal = (weight * 1.1232).toFixed(1);
     return (
       <div>
-        <label>Weight:</label>
+        <div className="d-flex flex-row justify-content-center">
+
+        <label className="mt-2 mb-2">Weight:</label>
+        &nbsp;
         <input
           type="text"
+          className="form-control-sm mt-2 mb-2"
           id="weight"
           placeholder={weight}
           onChange={this.handleFieldChange}
         />
         <button
           type="button"
-          className="btn btn-secondary btn-sm"
+          className="btn mt-2 mb-2 btn-secondary btn-sm"
           onClick={() => {
             this.updateExistingUser();
             
@@ -83,7 +87,8 @@ export default class FoodList extends Component {
         >
           Save Weight
         </button>
-        <section className="foods block-example border border-dark">
+        </div>
+        <section className="d-flex flex-wrap border border-primary rounded container">
           {this.props.foods
             .filter(
               food =>
