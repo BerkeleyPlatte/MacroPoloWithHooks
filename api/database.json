@@ -3,99 +3,115 @@
     {
       "id": 1,
       "userName": "berk",
-      "weight": "180",
+      "weight": "182.5",
       "password": "one"
+    },
+    {
+      "id": 2,
+      "userName": "new",
+      "weight": "100",
+      "password": "new"
     }
   ],
   "foods": [
     {
-      "id": 5,
-      "userId": 1,
-      "name": "pumpkin seed 1/4cup",
-      "fat": 17,
-      "carb": 4,
-      "protein": 10,
-      "date": 7,
-      "count": 0
-    },
-    {
-      "id": 6,
+      "id": 4,
       "userId": 1,
       "name": "on shake",
       "fat": 1.5,
       "carb": 3,
       "protein": 24,
-      "date": 7,
+      "date": 8,
       "count": 0
     },
     {
-      "id": 7,
-      "userId": 1,
-      "name": "veggies 1cup",
-      "fat": 0,
-      "carb": 5,
-      "protein": 2,
-      "date": 7,
-      "count": 0
+      "id": 6,
+      "userId": 2,
+      "name": "new const thing",
+      "fat": 1,
+      "carb": 1,
+      "protein": 1,
+      "date": 8,
+      "count": 1
     },
     {
       "id": 8,
-      "userId": 1,
-      "name": "chicken 2oz",
-      "fat": 2.5,
-      "carb": 0,
-      "protein": 22,
-      "date": 7,
-      "count": 0
-    },
-    {
-      "id": 9,
-      "userId": 1,
-      "name": "beans 1/4cup",
-      "fat": 0,
-      "carb": 9.5,
-      "protein": 3.5,
-      "date": 7,
-      "count": 0
-    },
-    {
-      "id": 10,
-      "userId": 1,
-      "name": "banana",
-      "fat": 0.4,
-      "carb": 29,
-      "protein": 1.4,
-      "date": 7,
-      "count": 0
-    },
-    {
-      "id": 11,
       "userId": 1,
       "name": "mp shake",
       "fat": 2,
       "carb": 5,
       "protein": 25,
-      "date": 7,
-      "count": 0
-    },
-    {
-      "id": 12,
-      "userId": 1,
-      "name": "coconut oil 1tsp",
-      "fat": 4.7,
-      "carb": 0,
-      "protein": 0,
-      "date": 7,
+      "date": 8,
       "count": 0
     },
     {
       "id": 13,
       "userId": 1,
-      "name": "changing thing",
-      "fat": 1000,
-      "carb": 1000,
-      "protein": 1000,
-      "date": 7,
+      "name": "veggies",
+      "fat": 0,
+      "carb": 5,
+      "protein": 2,
+      "date": 9,
+      "count": 0
+    },
+    {
+      "id": 14,
+      "userId": 1,
+      "name": "chicken 3oz",
+      "fat": 1,
+      "carb": 0,
+      "protein": 24,
+      "date": 9,
+      "count": 0
+    },
+    {
+      "id": 17,
+      "userId": 1,
+      "name": "beans 1/4 cup",
+      "fat": 0,
+      "carb": 9.5,
+      "protein": 3.5,
+      "date": 9,
+      "count": 0
+    },
+    {
+      "id": 18,
+      "userId": 1,
+      "name": "2 almonds",
+      "fat": 1,
+      "carb": 0,
+      "protein": 0,
+      "date": 9,
+      "count": 0
+    },
+    {
+      "id": 22,
+      "userId": 1,
+      "name": "burrito",
+      "fat": 46,
+      "carb": 108,
+      "protein": 55,
+      "date": 11,
+      "count": 0
+    },
+    {
+      "name": "banana",
+      "fat": 0.4,
+      "carb": 29,
+      "protein": 1.4,
+      "userId": 1,
+      "count": 0,
+      "date": 11,
+      "id": 23
+    },
+    {
+      "id": 24,
+      "userId": 1,
+      "name": "kombucha",
+      "fat": 0,
+      "carb": 12,
+      "protein": 0,
+      "date": 11,
       "count": 0
     }
   ]
