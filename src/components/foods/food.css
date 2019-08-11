@@ -12,7 +12,6 @@
 } */
 
 .container {
-  width: 335px;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 10px;
@@ -21,6 +20,8 @@
   margin-left: auto;
   margin-bottom: 5px;
   display: flex;
+  min-width: 335px;
+  max-width: 550px;
   min-height: 100px;
 }
 

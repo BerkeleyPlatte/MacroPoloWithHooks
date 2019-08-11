@@ -17,6 +17,12 @@
       "weight": 0,
       "password": "two",
       "id": 3
+    },
+    {
+      "userName": "crornk",
+      "weight": 0,
+      "password": "three",
+      "id": 4
     }
   ],
   "foods": [
@@ -109,6 +115,26 @@
       "protein": 14.4,
       "date": 11,
       "count": 1
+    },
+    {
+      "name": "pumpkin seeds 1/4cup",
+      "fat": 17,
+      "carb": 4,
+      "protein": 10,
+      "userId": 1,
+      "count": 0,
+      "date": 11,
+      "id": 30
+    },
+    {
+      "name": "dark chocolate",
+      "fat": 9,
+      "carb": 4,
+      "protein": 2,
+      "userId": 1,
+      "count": 0,
+      "date": 11,
+      "id": 31
     }
   ]
 }
