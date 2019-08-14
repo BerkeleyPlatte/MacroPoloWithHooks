@@ -113,7 +113,7 @@ export default class FoodList extends Component {
           <div className="foodsButton">
             <button
               type="button"
-              className="btn btn-success"
+              className="btn btn-success createBtn"
               onClick={() => {
                 this.props.history.push("/foods/new");
               }}
@@ -157,7 +157,7 @@ export default class FoodList extends Component {
             </ButtonGroup>
           </div>
         </React.Fragment>
-        <div>
+        <div className="table">
           <Table striped bordered hover size="sm">
             <thead>
               <tr>
@@ -193,7 +193,7 @@ export default class FoodList extends Component {
         <section>
           <button
             type="button"
-            className="btn btn-secondary btn-sm"
+            className="btn btn-secondary btn clearBtn"
             onClick={() => {
               localStorage.setItem("weight", this.state.weight);
 
