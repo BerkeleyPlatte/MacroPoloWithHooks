@@ -76,8 +76,8 @@ export default class FoodCard extends Component {
       this.props.deleteFood(this.props.food.id);
       this.updateCount();
       this.props.history.push("/foods");
-      } else if (this.props.action === "edit") {
-        this.props.history.push(`/foods/${this.props.food.id}/edit`);
+    } else if (this.props.action === "edit") {
+      this.props.history.push(`/foods/${this.props.food.id}/edit`);
     }
   };
 
@@ -85,12 +85,13 @@ export default class FoodCard extends Component {
     return (
       <div>
         <div key={this.props.food.id} className="thing shadow rounded w-auto">
-          <button className="btn btn-outline-primary" onClick={this.clickParent}>
+          <button
+            className="btn btn-outline-primary"
+            onClick={this.clickParent}
+          >
             {this.props.food.name}
             <br />
-            <Badge onChange={this.changeParent}>
-              {this.props.food.count}
-            </Badge>
+            <Badge onChange={this.changeParent}>{this.props.food.count}</Badge>
           </button>
         </div>
       </div>
