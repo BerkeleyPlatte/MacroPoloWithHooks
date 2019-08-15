@@ -11,19 +11,45 @@
       "userName": "new",
       "weight": "100",
       "password": "new"
+    },
+    {
+      "userName": "ellie",
+      "weight": 0,
+      "password": "two",
+      "id": 3
+    },
+    {
+      "userName": "crornk",
+      "weight": 0,
+      "password": "three",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "userName": "person",
+      "weight": "100",
+      "password": "test"
+    },
+    {
+      "userName": "austyn",
+      "weight": 0,
+      "password": "austyn",
+      "id": 6
+    },
+    {
+      "userName": "cuteBarista",
+      "weight": 0,
+      "password": "cuteBarista",
+      "id": 7
+    },
+    {
+      "id": 8,
+      "userName": "newguy",
+      "weight": "400",
+      "password": "newguy"
     }
   ],
   "foods": [
-    {
-      "id": 4,
-      "userId": 1,
-      "name": "on shake",
-      "fat": 1.5,
-      "carb": 3,
-      "protein": 24,
-      "date": 8,
-      "count": 0
-    },
     {
       "id": 6,
       "userId": 2,
@@ -35,84 +61,160 @@
       "count": 1
     },
     {
-      "id": 8,
+      "id": 23,
       "userId": 1,
       "name": "mp shake",
       "fat": 2,
       "carb": 5,
       "protein": 25,
-      "date": 8,
-      "count": 0
+      "date": 11,
+      "count": 2
     },
     {
-      "id": 13,
+      "id": 24,
       "userId": 1,
-      "name": "veggies",
+      "name": "on shake",
+      "fat": 1.5,
+      "carb": 3,
+      "protein": 24,
+      "date": 11,
+      "count": 2
+    },
+    {
+      "id": 25,
+      "userId": 1,
+      "name": "2 almonds",
+      "fat": 1,
+      "carb": "0.4285",
+      "protein": "0.4285",
+      "count": 7
+    },
+    {
+      "id": 26,
+      "userId": 1,
+      "name": "veggies 1cup",
       "fat": 0,
-      "carb": 5,
-      "protein": 2,
-      "date": 9,
+      "carb": "5",
+      "protein": "2",
       "count": 0
     },
     {
-      "id": 14,
+      "id": 27,
       "userId": 1,
       "name": "chicken 3oz",
       "fat": 1,
       "carb": 0,
       "protein": 24,
-      "date": 9,
+      "date": 11,
+      "count": 4
+    },
+    {
+      "id": 29,
+      "userId": 3,
+      "name": "sandwich",
+      "fat": 27,
+      "carb": 45.4,
+      "protein": 14.4,
+      "date": 11,
+      "count": 1
+    },
+    {
+      "id": 30,
+      "userId": 1,
+      "name": "pumpkin seeds 1/4cup",
+      "fat": 17,
+      "carb": 4,
+      "protein": 10,
+      "date": 11,
       "count": 0
     },
     {
-      "id": 17,
+      "id": 35,
       "userId": 1,
-      "name": "beans 1/4 cup",
+      "name": "chicken 1oz",
+      "fat": 0.3333,
+      "carb": 0,
+      "protein": 8,
+      "date": 11,
+      "count": 0
+    },
+    {
+      "id": 36,
+      "userId": 5,
+      "name": "thing one",
+      "fat": 1,
+      "carb": 1,
+      "protein": 1,
+      "date": 13,
+      "count": 1
+    },
+    {
+      "id": 37,
+      "userId": 1,
+      "name": "blueberries 1/4cup",
+      "fat": 0,
+      "carb": 4.25,
+      "protein": 0,
+      "date": 13,
+      "count": 0
+    },
+    {
+      "id": 38,
+      "userId": 1,
+      "name": "beans 1/4cup",
       "fat": 0,
       "carb": 9.5,
       "protein": 3.5,
-      "date": 9,
-      "count": 0
+      "count": 1
     },
     {
-      "id": 18,
-      "userId": 1,
-      "name": "2 almonds",
+      "id": 40,
+      "userId": 8,
+      "name": "constant thing",
       "fat": 1,
-      "carb": 0,
-      "protein": 0,
-      "date": 9,
-      "count": 0
+      "carb": 1,
+      "protein": 1,
+      "date": 14,
+      "count": 1
     },
     {
-      "id": 22,
-      "userId": 1,
-      "name": "burrito",
-      "fat": 46,
-      "carb": 108,
-      "protein": 55,
-      "date": 11,
-      "count": 0
+      "id": 41,
+      "userId": 8,
+      "name": "changing thing",
+      "fat": "100",
+      "carb": "100",
+      "protein": "100",
+      "count": 1
     },
     {
-      "name": "banana",
-      "fat": 0.4,
-      "carb": 29,
-      "protein": 1.4,
+      "id": 43,
       "userId": 1,
-      "count": 0,
-      "date": 11,
-      "id": 23
+      "name": "7oz avocado",
+      "fat": 16.64,
+      "carb": 9.86,
+      "protein": 2.28,
+      "date": 14,
+      "count": 1
     },
     {
-      "id": 24,
+      "id": 46,
       "userId": 1,
-      "name": "kombucha",
+      "name": "sweet peas",
       "fat": 0,
-      "carb": 12,
-      "protein": 0,
-      "date": 11,
+      "carb": 30,
+      "protein": 7,
+      "date": 14,
       "count": 0
+    },
+    {
+      "id": 47,
+      "userId": 1,
+      "name": "s'more",
+      "fat": 8,
+      "carb": 32,
+      "protein": 2,
+      "date": 14,
+      "count": 3
     }
   ]
 }

@@ -22,7 +22,7 @@ class NavBar extends Component {
         </ul>
 
         <Link
-          className="btn btn-primary btn-sm"
+          className="btn btn-primary btn-sm mr-3"
           onClick={this.clearStorage}
           to="/"
         >

@@ -36,37 +36,45 @@ export default class Login extends Component {
 
   render() {
     return (
-      <form className="justify-content-center" onSubmit={this.handleLogin}>
-        <h1 className="h4 mb-3 font-weight-normal">Please Sign In</h1>
-        <label htmlFor="inputUserName">User Name:&nbsp;</label>
-        <input
-          onChange={this.handleFieldChange}
-          type="text"
-          id="userName"
-          placeholder="User Name"
-          required=""
-        />
+      <form className="d-flex flex-column" onSubmit={this.handleLogin}>
+        <h1 className="d-flex h4 mb-3 font-weight-normal justify-content-center">
+          Please Sign In
+        </h1>
+        <div className="d-flex justify-content-center">
+          <label htmlFor="inputUserName">User Name:&nbsp;</label>
+          <input
+            onChange={this.handleFieldChange}
+            type="text"
+            id="userName"
+            placeholder="User Name"
+            required=""
+          />
+        </div>
         &nbsp;
-        <label htmlFor="inputPassword">Password:&nbsp;</label>
-        <input
-          onChange={this.handleFieldChange}
-          type="password"
-          id="password"
-          placeholder="Password"
-          required=""
-        />
+        <div className="d-flex justify-content-center">
+          <label htmlFor="inputPassword">Password:&nbsp;</label>
+          <input
+            onChange={this.handleFieldChange}
+            type="password"
+            id="password"
+            placeholder="Password"
+            required=""
+          />
+        </div>
         &nbsp;
-        <button type="submit" className="btn btn-info btn-sm login-button">
-          Sign in
-        </button>
-        <br />
-        <button
-          type="button"
-          className="btn btn-secondary btn-sm"
-          onClick={() => this.props.history.push("/register")}
-        >
-          Register New Account
-        </button>
+        <div className="d-flex justify-content-center">
+          <button type="submit" className="btn btn-info btn-sm login-button">
+            Sign in
+          </button>
+          &nbsp;
+          <button
+            type="button"
+            className="btn btn-secondary btn-sm"
+            onClick={() => this.props.history.push("/register")}
+          >
+            Register New Account
+          </button>
+        </div>
       </form>
     );
   }
