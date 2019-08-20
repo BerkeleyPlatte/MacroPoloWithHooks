@@ -47,6 +47,42 @@
       "userName": "newguy",
       "weight": "400",
       "password": "newguy"
+    },
+    {
+      "id": 9,
+      "userName": "hope",
+      "weight": "99",
+      "password": "hope"
+    },
+    {
+      "id": 10,
+      "userName": "dave",
+      "weight": "100",
+      "password": "dave"
+    },
+    {
+      "id": 11,
+      "userName": "noob",
+      "weight": "99",
+      "password": "noob"
+    },
+    {
+      "id": 12,
+      "userName": "elephant",
+      "weight": "1000",
+      "password": "elephant"
+    },
+    {
+      "id": 13,
+      "userName": "animal",
+      "weight": "500",
+      "password": "animal"
+    },
+    {
+      "id": 14,
+      "userName": "giant",
+      "weight": "1000",
+      "password": "giant"
     }
   ],
   "foods": [
@@ -78,7 +114,7 @@
       "carb": 3,
       "protein": 24,
       "date": 11,
-      "count": 2
+      "count": 1
     },
     {
       "id": 25,
@@ -87,7 +123,7 @@
       "fat": 1,
       "carb": "0.4285",
       "protein": "0.4285",
-      "count": 7
+      "count": 0
     },
     {
       "id": 26,
@@ -136,7 +172,7 @@
       "carb": 0,
       "protein": 8,
       "date": 11,
-      "count": 0
+      "count": 1
     },
     {
       "id": 36,
@@ -149,23 +185,13 @@
       "count": 1
     },
     {
-      "id": 37,
-      "userId": 1,
-      "name": "blueberries 1/4cup",
-      "fat": 0,
-      "carb": 4.25,
-      "protein": 0,
-      "date": 13,
-      "count": 0
-    },
-    {
       "id": 38,
       "userId": 1,
       "name": "beans 1/4cup",
       "fat": 0,
       "carb": 9.5,
       "protein": 3.5,
-      "count": 1
+      "count": 0
     },
     {
       "id": 40,
@@ -189,11 +215,10 @@
     {
       "id": 43,
       "userId": 1,
-      "name": "7oz avocado",
+      "name": "avocado",
       "fat": 16.64,
       "carb": 9.86,
       "protein": 2.28,
-      "date": 14,
       "count": 1
     },
     {
@@ -207,14 +232,132 @@
       "count": 0
     },
     {
-      "id": 47,
-      "userId": 1,
-      "name": "s'more",
-      "fat": 8,
-      "carb": 32,
-      "protein": 2,
+      "name": "food",
+      "fat": 1,
+      "carb": 1,
+      "protein": 1,
+      "userId": 9,
+      "count": 0,
       "date": 14,
+      "id": 48
+    },
+    {
+      "name": "more food",
+      "fat": 1,
+      "carb": 1,
+      "protein": 1,
+      "userId": 9,
+      "count": 0,
+      "date": 14,
+      "id": 50
+    },
+    {
+      "name": "one more food",
+      "fat": 8,
+      "carb": 6,
+      "protein": 9,
+      "userId": 9,
+      "count": 0,
+      "date": 14,
+      "id": 51
+    },
+    {
+      "id": 52,
+      "userId": 11,
+      "name": "good food",
+      "fat": 1,
+      "carb": 1,
+      "protein": 1,
+      "date": 15,
+      "count": 1
+    },
+    {
+      "id": 54,
+      "userId": 1,
+      "name": "corn",
+      "fat": 2,
+      "carb": 26,
+      "protein": 2,
+      "date": 15,
+      "count": 0
+    },
+    {
+      "id": 55,
+      "userId": 1,
+      "name": "coconut oil 1tbsp",
+      "fat": 14,
+      "carb": 0,
+      "protein": 0,
+      "date": 15,
+      "count": 0
+    },
+    {
+      "id": 58,
+      "userId": 1,
+      "name": "coconut oil 1tsp",
+      "fat": 4.667,
+      "carb": 0,
+      "protein": 0,
+      "date": 16,
+      "count": 0
+    },
+    {
+      "id": 64,
+      "userId": 1,
+      "name": "banana",
+      "fat": 0,
+      "carb": 27,
+      "protein": 1,
+      "date": 19,
       "count": 3
+    },
+    {
+      "id": 65,
+      "userId": 1,
+      "name": "watermelon kombucha",
+      "fat": "0",
+      "carb": 18,
+      "protein": 0,
+      "count": 1
+    },
+    {
+      "id": 66,
+      "userId": 12,
+      "name": "grass",
+      "fat": 1,
+      "carb": 1,
+      "protein": 1,
+      "date": 19,
+      "count": 1
+    },
+    {
+      "id": 67,
+      "userId": 13,
+      "name": "constant food",
+      "fat": 1,
+      "carb": 1,
+      "protein": 1,
+      "date": 19,
+      "count": 1
+    },
+    {
+      "id": 68,
+      "userId": 1,
+      "name": "cheese",
+      "fat": 7,
+      "carb": 0,
+      "protein": 5,
+      "date": 19,
+      "count": 5
+    },
+    {
+      "id": 69,
+      "userId": 1,
+      "name": "trilogy kombucha",
+      "fat": 0,
+      "carb": 12,
+      "protein": 0,
+      "count": 1
     }
   ]
 }
