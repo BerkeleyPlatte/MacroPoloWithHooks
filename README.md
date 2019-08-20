@@ -1,4 +1,4 @@
-To run Macro Polo locally, create an empty directory and clone the project by running the following command in your terminal: git@github.com:BerkeleyPlatte/Berks-Actual-Front-End-Capstone.git
+To run Macro Polo locally, create an empty directory and clone the project by running the following command in your terminal: git@github.com:BerkeleyPlatte/Berk-Actual-Front-End-Capstone.git
 
 Macro Polo uses a database.json file to store all data. To create the database, run:
 
