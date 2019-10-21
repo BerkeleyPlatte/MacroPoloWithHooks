@@ -1,4 +1,4 @@
-To run Macro Polo locally, create an empty directory and clone the project by running the following command in your terminal: git@github.com:BerkeleyPlatte/Berk-Actual-Front-End-Capstone.git
+To run Macro Polo locally, create an empty directory and clone the project by running the following command in your terminal: git@github.com:BerkeleyPlatte/MacroPolo.git
 
 Macro Polo uses a database.json file to store all data. To create the database, run:
 
@@ -370,4 +370,11 @@ Open database.json and copy the following into the file to create a database ske
     }
   ]
 }
-Traverse back the Berks-Actual-Front-End-Capstone folder and run: npm install This is will install all packages, libraries and their dependencies used by Macro Polo. Next run the following in order to view Macro Polo in your browser: npm start Open http://localhost:3000 to view it in the browser. In another window of your terminal go into the src/api forlder and run: json-server -p 5001 database.json
+
+
+Traverse back the MacroPolo folder and run: npm install This is will install all packages, libraries and their dependencies used by Macro Polo. 
+
+In another window of your terminal go into the src/api forlder and run: json-server -p 5001 database.json.  Be sure to leave the -w flag off.
+
+Next run the following in order to view Macro Polo in your browser: npm start.  The page should launch automatically. 
+
