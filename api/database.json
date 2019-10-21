@@ -3,7 +3,7 @@
     {
       "id": 1,
       "userName": "berk",
-      "weight": "182.5",
+      "weight": "180",
       "password": "one"
     },
     {
@@ -83,6 +83,12 @@
       "userName": "giant",
       "weight": "1000",
       "password": "giant"
+    },
+    {
+      "userName": "scroll",
+      "weight": 0,
+      "password": "scroll",
+      "id": 15
     }
   ],
   "foods": [
@@ -97,26 +103,6 @@
       "count": 1
     },
     {
-      "id": 23,
-      "userId": 1,
-      "name": "mp shake",
-      "fat": 2,
-      "carb": 5,
-      "protein": 25,
-      "date": 11,
-      "count": 2
-    },
-    {
-      "id": 24,
-      "userId": 1,
-      "name": "on shake",
-      "fat": 1.5,
-      "carb": 3,
-      "protein": 24,
-      "date": 11,
-      "count": 1
-    },
-    {
       "id": 25,
       "userId": 1,
       "name": "2 almonds",
@@ -124,25 +110,6 @@
       "carb": "0.4285",
       "protein": "0.4285",
       "count": 0
-    },
-    {
-      "id": 26,
-      "userId": 1,
-      "name": "veggies 1cup",
-      "fat": 0,
-      "carb": "5",
-      "protein": "2",
-      "count": 0
-    },
-    {
-      "id": 27,
-      "userId": 1,
-      "name": "chicken 3oz",
-      "fat": 1,
-      "carb": 0,
-      "protein": 24,
-      "date": 11,
-      "count": 4
     },
     {
       "id": 29,
@@ -155,16 +122,6 @@
       "count": 1
     },
     {
-      "id": 30,
-      "userId": 1,
-      "name": "pumpkin seeds 1/4cup",
-      "fat": 17,
-      "carb": 4,
-      "protein": 10,
-      "date": 11,
-      "count": 0
-    },
-    {
       "id": 35,
       "userId": 1,
       "name": "chicken 1oz",
@@ -172,7 +129,7 @@
       "carb": 0,
       "protein": 8,
       "date": 11,
-      "count": 1
+      "count": 4
     },
     {
       "id": 36,
@@ -211,25 +168,6 @@
       "carb": "100",
       "protein": "100",
       "count": 1
-    },
-    {
-      "id": 43,
-      "userId": 1,
-      "name": "avocado",
-      "fat": 16.64,
-      "carb": 9.86,
-      "protein": 2.28,
-      "count": 1
-    },
-    {
-      "id": 46,
-      "userId": 1,
-      "name": "sweet peas",
-      "fat": 0,
-      "carb": 30,
-      "protein": 7,
-      "date": 14,
-      "count": 0
     },
     {
       "name": "food",
@@ -282,16 +220,6 @@
       "count": 0
     },
     {
-      "id": 55,
-      "userId": 1,
-      "name": "coconut oil 1tbsp",
-      "fat": 14,
-      "carb": 0,
-      "protein": 0,
-      "date": 15,
-      "count": 0
-    },
-    {
       "id": 58,
       "userId": 1,
       "name": "coconut oil 1tsp",
@@ -300,25 +228,6 @@
       "protein": 0,
       "date": 16,
       "count": 0
-    },
-    {
-      "id": 64,
-      "userId": 1,
-      "name": "banana",
-      "fat": 0,
-      "carb": 27,
-      "protein": 1,
-      "date": 19,
-      "count": 3
-    },
-    {
-      "id": 65,
-      "userId": 1,
-      "name": "watermelon kombucha",
-      "fat": "0",
-      "carb": 18,
-      "protein": 0,
-      "count": 1
     },
     {
       "id": 66,
@@ -341,22 +250,478 @@
       "count": 1
     },
     {
-      "id": 68,
-      "userId": 1,
-      "name": "cheese",
-      "fat": 7,
-      "carb": 0,
-      "protein": 5,
-      "date": 19,
-      "count": 5
-    },
-    {
       "id": 69,
       "userId": 1,
-      "name": "trilogy kombucha",
+      "name": "sweet peas",
+      "fat": 0,
+      "carb": 30,
+      "protein": 7,
+      "date": 21,
+      "count": 0
+    },
+    {
+      "id": 72,
+      "userId": 1,
+      "name": "coconut oil 1tbsp",
+      "fat": 14,
+      "carb": 0,
+      "protein": 0,
+      "date": 26,
+      "count": 0
+    },
+    {
+      "id": 73,
+      "userId": 1,
+      "name": "beans 1tbsp",
+      "fat": 0,
+      "carb": 2.375,
+      "protein": 0.875,
+      "date": 26,
+      "count": 0
+    },
+    {
+      "id": 77,
+      "userId": 1,
+      "name": "apple",
+      "fat": 0,
+      "carb": 22,
+      "protein": 0,
+      "date": 26,
+      "count": 0
+    },
+    {
+      "id": 81,
+      "userId": 1,
+      "name": "salmon",
+      "fat": 10,
+      "carb": 0,
+      "protein": 32,
+      "date": 30,
+      "count": 0
+    },
+    {
+      "id": 83,
+      "userId": 1,
+      "name": "pea protein",
+      "fat": 2,
+      "carb": 1,
+      "protein": 24,
+      "date": 30,
+      "count": 0
+    },
+    {
+      "id": 87,
+      "userId": 1,
+      "name": "cabbage 1/2cup",
+      "fat": 0,
+      "carb": 7,
+      "protein": 1,
+      "date": 30,
+      "count": 0
+    },
+    {
+      "id": 89,
+      "userId": 1,
+      "name": "beets 1/2cup",
+      "fat": 0,
+      "carb": 5,
+      "protein": 1,
+      "date": 30,
+      "count": 0
+    },
+    {
+      "id": 90,
+      "userId": 1,
+      "name": "chickpeas 1/2cup",
+      "fat": 2,
+      "carb": 18,
+      "protein": 6,
+      "date": 30,
+      "count": 0
+    },
+    {
+      "id": 91,
+      "userId": 1,
+      "name": "field peas and snaps 1/2cup",
+      "fat": 0.5,
+      "carb": 20,
+      "protein": 7,
+      "date": 30,
+      "count": 0
+    },
+    {
+      "id": 93,
+      "userId": 1,
+      "name": "squash 1/2cup",
+      "fat": 0,
+      "carb": 5,
+      "protein": 1,
+      "date": 30,
+      "count": 0
+    },
+    {
+      "id": 94,
+      "userId": 1,
+      "name": "lentils 1/2cup",
+      "fat": 0,
+      "carb": 21,
+      "protein": 7,
+      "date": 30,
+      "count": 0
+    },
+    {
+      "id": 95,
+      "userId": 1,
+      "name": "carrots",
+      "fat": 0,
+      "carb": 9,
+      "protein": 1,
+      "date": 30,
+      "count": 0
+    },
+    {
+      "name": "peas and carrots",
+      "fat": 0,
+      "carb": 19,
+      "protein": 5,
+      "userId": 1,
+      "count": 0,
+      "date": 30,
+      "id": 96
+    },
+    {
+      "id": 97,
+      "userId": 1,
+      "name": "green beans",
+      "fat": 0,
+      "carb": 7,
+      "protein": 1,
+      "date": 30,
+      "count": 0
+    },
+    {
+      "id": 104,
+      "userId": 1,
+      "name": "cacao powder 1tbsp",
+      "fat": 0,
+      "carb": 3,
+      "protein": 1,
+      "count": 0
+    },
+    {
+      "id": 106,
+      "userId": 1,
+      "name": "yerba mate",
+      "fat": 0,
+      "carb": 28,
+      "protein": 0,
+      "date": 1,
+      "count": 0
+    },
+    {
+      "name": "q",
+      "fat": 1,
+      "carb": 1,
+      "protein": 1,
+      "userId": 15,
+      "count": 0,
+      "date": 2,
+      "id": 109
+    },
+    {
+      "name": "thieng",
+      "fat": 5,
+      "carb": 5,
+      "protein": 5,
+      "userId": 15,
+      "count": 0,
+      "date": 2,
+      "id": 110
+    },
+    {
+      "name": "bothgi",
+      "fat": 3,
+      "carb": 3,
+      "protein": 3,
+      "userId": 15,
+      "count": 0,
+      "date": 2,
+      "id": 111
+    },
+    {
+      "name": "hbjkdsl",
+      "fat": 4,
+      "carb": 4,
+      "protein": 4,
+      "userId": 15,
+      "count": 0,
+      "date": 2,
+      "id": 112
+    },
+    {
+      "name": "jhkgldflk",
+      "fat": 1,
+      "carb": 1,
+      "protein": 1,
+      "userId": 15,
+      "count": 0,
+      "date": 2,
+      "id": 113
+    },
+    {
+      "name": "gjkgldkj",
+      "fat": 2,
+      "carb": 2,
+      "protein": 2,
+      "userId": 15,
+      "count": 0,
+      "date": 2,
+      "id": 114
+    },
+    {
+      "name": "mhkgdlnjdk",
+      "fat": 3,
+      "carb": 3,
+      "protein": 3,
+      "userId": 15,
+      "count": 0,
+      "date": 2,
+      "id": 115
+    },
+    {
+      "name": "nhgjks",
+      "fat": 3,
+      "carb": 3,
+      "protein": 3,
+      "userId": 15,
+      "count": 0,
+      "date": 2,
+      "id": 116
+    },
+    {
+      "name": "ghjksdl",
+      "fat": 4,
+      "carb": 4,
+      "protein": 4,
+      "userId": 15,
+      "count": 0,
+      "date": 2,
+      "id": 117
+    },
+    {
+      "name": "njxkf",
+      "fat": 4,
+      "carb": 4,
+      "protein": 4,
+      "userId": 15,
+      "count": 0,
+      "date": 2,
+      "id": 118
+    },
+    {
+      "id": 123,
+      "userId": 1,
+      "name": "pizza (generic)",
+      "fat": 12,
+      "carb": 35,
+      "protein": 13,
+      "date": 5,
+      "count": 0
+    },
+    {
+      "id": 124,
+      "userId": 1,
+      "name": "pea protein 1tbsp",
+      "fat": 0.867,
+      "carb": 0.43333,
+      "protein": 10.39999,
+      "date": 5,
+      "count": 0
+    },
+    {
+      "id": 139,
+      "userId": 1,
+      "name": "raw carrot",
+      "fat": 0,
+      "carb": 12,
+      "protein": 1,
+      "date": 11,
+      "count": 0
+    },
+    {
+      "id": 141,
+      "userId": 1,
+      "name": "avocado",
+      "fat": 29,
+      "carb": 17,
+      "protein": 4,
+      "date": 16,
+      "count": 0
+    },
+    {
+      "id": 142,
+      "userId": 1,
+      "name": "pork chop 1oz",
+      "fat": "3.1",
+      "carb": "0",
+      "protein": "7.3",
+      "count": 0
+    },
+    {
+      "id": 143,
+      "userId": 1,
+      "name": "fried egg",
+      "fat": 7,
+      "carb": 0.4,
+      "protein": 6,
+      "date": 16,
+      "count": 3
+    },
+    {
+      "id": 144,
+      "userId": 1,
+      "name": "broccoli 100g",
+      "fat": 0.4,
+      "carb": 7,
+      "protein": 2.8,
+      "date": 16,
+      "count": 0
+    },
+    {
+      "id": 145,
+      "userId": 1,
+      "name": "banana",
+      "fat": 0.4,
+      "carb": 27,
+      "protein": 1.3,
+      "date": 16,
+      "count": 0
+    },
+    {
+      "id": 148,
+      "userId": 1,
+      "name": "wtrmln kom",
+      "fat": 0,
+      "carb": 18,
+      "protein": 0,
+      "date": 18,
+      "count": 0
+    },
+    {
+      "id": 162,
+      "userId": 1,
+      "name": "tri kom",
       "fat": 0,
       "carb": 12,
       "protein": 0,
+      "date": 22,
+      "count": 0
+    },
+    {
+      "id": 167,
+      "userId": 1,
+      "name": "asparagus 100g",
+      "fat": 0.1,
+      "carb": 3.9,
+      "protein": 2.2,
+      "date": 25,
+      "count": 0
+    },
+    {
+      "id": 175,
+      "userId": 1,
+      "name": "pea protein shake",
+      "fat": "3",
+      "carb": "9",
+      "protein": "26.5",
+      "count": 0
+    },
+    {
+      "id": 176,
+      "userId": 1,
+      "name": "mixed nuts 1/4cup",
+      "fat": 16,
+      "carb": 7,
+      "protein": 5,
+      "date": 3,
+      "count": 0
+    },
+    {
+      "id": 177,
+      "userId": 1,
+      "name": "oatmeal 1/4cup",
+      "fat": 3,
+      "carb": 27,
+      "protein": 5,
+      "date": 9,
+      "count": 0
+    },
+    {
+      "id": 180,
+      "userId": 1,
+      "name": "craisins 1/4cup",
+      "fat": 0,
+      "carb": 33,
+      "protein": 0,
+      "count": 0
+    },
+    {
+      "id": 183,
+      "userId": 1,
+      "name": "sobe",
+      "fat": 0,
+      "carb": 64,
+      "protein": 0,
+      "date": 15,
+      "count": 1
+    },
+    {
+      "id": 184,
+      "userId": 1,
+      "name": "chicken sausage",
+      "fat": 9,
+      "carb": 1,
+      "protein": 14,
+      "date": 15,
+      "count": 0
+    },
+    {
+      "id": 185,
+      "userId": 1,
+      "name": "berries 1/2cup",
+      "fat": 0,
+      "carb": 9,
+      "protein": 0.5,
+      "date": 16,
+      "count": 0
+    },
+    {
+      "id": 187,
+      "userId": 1,
+      "name": "onions & sweet potatoes 68g",
+      "fat": 0.1,
+      "carb": 14.5,
+      "protein": 1.35,
+      "count": 0
+    },
+    {
+      "id": 189,
+      "userId": 1,
+      "name": "sugar free pea protein shake",
+      "fat": 3,
+      "carb": 5,
+      "protein": 26.5,
+      "date": 19,
+      "count": 0
+    },
+    {
+      "id": 190,
+      "userId": 1,
+      "name": "powerade",
+      "fat": 0,
+      "carb": 35,
+      "protein": 0,
+      "date": 21,
       "count": 1
     }
   ]
