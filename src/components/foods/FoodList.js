@@ -88,7 +88,7 @@ export default class FoodList extends Component {
           Save Weight
         </button>
         </div>
-        <section className="d-flex flex-wrap border border-primary rounded container">
+        <section className="d-flex flex-wrap border border-primary rounded container pre-scrollable">
           {this.props.foods
             .filter(
               food =>
