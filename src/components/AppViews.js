@@ -7,6 +7,7 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import FoodEditForm from "./foods/FoodEditForm";
 import FoodForm from "./foods/FoodForm";
+import ReportList from "./reports/ReportList";
 
 // AppViews is the parent
 class AppViews extends Component {
@@ -15,6 +16,7 @@ class AppViews extends Component {
   state = {
     foods: [],
     users: [],
+    eatenFoods: [],
     fatSoFar: 0,
     carbSoFar: 0,
     proteinSoFar: 0
@@ -106,6 +108,17 @@ class AppViews extends Component {
       );
   };
 
+  addEatenFood = eatenFood => {
+    return DataManager.post(eatenFood, "eatenFoods")
+      .then(() => DataManager.getAll("eatenFoods"))
+
+      .then(eatenFoods =>
+        this.setState({
+          eatenFoods: eatenFoods
+        })
+      );
+  };
+
   updateFood = changedFood => {
     return DataManager.put(changedFood, "foods")
       .then(() => DataManager.getAll("foods"))
@@ -176,6 +189,7 @@ class AppViews extends Component {
                   users={this.state.users}
                   updateUser={this.updateUser}
                   revertUserCounts={this.revertUserCounts}
+                  addEatenFood={this.addEatenFood}
                 />
               );
             } else {
@@ -213,13 +227,13 @@ class AppViews extends Component {
             );
           }}
         />
-        {/* 
-        <Route
+
+        {/* <Route
           exact
-          path="/foods"
+          path="/reports"
           render={props => {
             if (this.isAuthenticated()) {
-              return null;
+              return <ReportList {...props} />;
             } else {
               return <Redirect to="/" />;
             }

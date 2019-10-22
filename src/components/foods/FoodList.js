@@ -26,7 +26,7 @@ export default class FoodList extends Component {
     let editedUser = {
       id: Number(sessionStorage.getItem("userId")),
       userName: this.state.userName,
-      weight: this.state.weight,
+      weight: Number(this.state.weight),
       password: this.state.password
     };
 
@@ -52,7 +52,7 @@ export default class FoodList extends Component {
       user => {
         this.setState({
           userName: user.userName,
-          weight: user.weight,
+          weight: Number(user.weight),
           password: user.password
         });
       }
@@ -105,6 +105,7 @@ export default class FoodList extends Component {
                 proteinSoFar={this.props.proteinSoFar}
                 makeMacrosArrs={this.props.makeMacrosArrs}
                 revertUserCounts={this.props.revertUserCounts}
+                addEatenFood={this.props.addEatenFood}
               />
             ))}
         </section>

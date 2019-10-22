@@ -12,13 +12,21 @@ export default class FoodCard extends Component {
     fat: 0,
     carb: 0,
     protein: 0,
-    date: ""
+    date: "",
+    foodId: 0
   };
 
-  handleFieldChange = evt => {
-    const stateToChange = {};
-    stateToChange[evt.target.id] = evt.target.value;
-    this.setState(stateToChange);
+  createNewEatenFood = () => {
+    let d = new Date();
+
+    if (this.props.food.count === 0) {
+      let newEatenFood = {
+        userId: Number(sessionStorage.getItem("userId")),
+        foodId: this.props.food.id,
+        date: d.getDate()
+      };
+      this.props.addEatenFood(newEatenFood);
+    }
   };
 
   updateCount = () => {
@@ -47,7 +55,8 @@ export default class FoodCard extends Component {
         fat: food.fat,
         carb: food.carb,
         protein: food.protein,
-        count: food.count
+        count: food.count,
+        foodId: food.id
       });
     });
   }
@@ -81,6 +90,11 @@ export default class FoodCard extends Component {
     }
   };
 
+  clickGrandParent = () => {
+    // this.createNewEatenFood();
+    this.clickParent();
+  };
+
   render() {
     return (
       <div>
@@ -91,7 +105,7 @@ export default class FoodCard extends Component {
                 ? "btn btn-outline-primary"
                 : "btn btn-info"
             }
-            onClick={this.clickParent}
+            onClick={this.clickGrandParent}
           >
             {this.props.food.name}
             <br />
