@@ -129,7 +129,7 @@
       "carb": 0,
       "protein": 8,
       "date": 11,
-      "count": 4
+      "count": 0
     },
     {
       "id": 36,
@@ -575,7 +575,7 @@
       "carb": 0.4,
       "protein": 6,
       "date": 16,
-      "count": 3
+      "count": 0
     },
     {
       "id": 144,
@@ -628,15 +628,6 @@
       "count": 0
     },
     {
-      "id": 175,
-      "userId": 1,
-      "name": "pea protein shake",
-      "fat": "3",
-      "carb": "9",
-      "protein": "26.5",
-      "count": 0
-    },
-    {
       "id": 176,
       "userId": 1,
       "name": "mixed nuts 1/4cup",
@@ -657,15 +648,6 @@
       "count": 0
     },
     {
-      "id": 180,
-      "userId": 1,
-      "name": "craisins 1/4cup",
-      "fat": 0,
-      "carb": 33,
-      "protein": 0,
-      "count": 0
-    },
-    {
       "id": 183,
       "userId": 1,
       "name": "sobe",
@@ -673,7 +655,7 @@
       "carb": 64,
       "protein": 0,
       "date": 15,
-      "count": 1
+      "count": 0
     },
     {
       "id": 184,
@@ -715,14 +697,14 @@
       "count": 0
     },
     {
-      "id": 190,
+      "name": "taco",
+      "fat": 9,
+      "carb": 14,
+      "protein": 6,
       "userId": 1,
-      "name": "powerade",
-      "fat": 0,
-      "carb": 35,
-      "protein": 0,
+      "count": 0,
       "date": 21,
-      "count": 1
+      "id": 192
     }
   ]
 }
