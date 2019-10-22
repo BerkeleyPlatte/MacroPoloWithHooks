@@ -61,8 +61,8 @@ export default class FoodList extends Component {
 
   render() {
     let weight = this.state.weight;
-    let fatGoal = (weight * 0.3287).toFixed(1);
-    let carbGoal = (weight * 0.7397).toFixed(1);
+    let fatGoal = (weight * 0.3777).toFixed(1);
+    let carbGoal = (weight * 0.9722).toFixed(1);
     let proteinGoal = (weight * 1.1388).toFixed(1);
     return (
       <div>
