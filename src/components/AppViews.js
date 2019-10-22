@@ -17,6 +17,7 @@ class AppViews extends Component {
     foods: [],
     users: [],
     eatenFoods: [],
+    filteredFoods: [],
     fatSoFar: 0,
     carbSoFar: 0,
     proteinSoFar: 0
@@ -62,6 +63,17 @@ class AppViews extends Component {
         carbSoFar: carbSum,
         proteinSoFar: proteinSum
       });
+    });
+  };
+
+  getFilteredFoods = () => {
+    return DataManager.getSorted(
+      "foods",
+      sessionStorage.getItem("userId")
+    ).then(foods => {
+      let filteredFoods = foods.filter(food => food.count > 0);
+      this.setState({ filteredFoods: filteredFoods });
+      console.log(filteredFoods)
     });
   };
 
@@ -190,6 +202,8 @@ class AppViews extends Component {
                   updateUser={this.updateUser}
                   revertUserCounts={this.revertUserCounts}
                   addEatenFood={this.addEatenFood}
+                  getFilteredFoods={this.getFilteredFoods}
+                  filteredFoods={this.state.filteredFoods}
                 />
               );
             } else {
