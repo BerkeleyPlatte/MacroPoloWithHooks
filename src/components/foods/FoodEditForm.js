@@ -8,7 +8,6 @@ export default class FoodEditForm extends Component {
     carb: 0,
     fat: 0,
     protein: 0,
-    date: 0,
     count: 0
   };
 
@@ -20,7 +19,6 @@ export default class FoodEditForm extends Component {
 
   updateExistingFood = evt => {
     evt.preventDefault();
-    let d = new Date();
 
 
     const editedFood = {
@@ -31,7 +29,6 @@ export default class FoodEditForm extends Component {
       carb: Number(this.state.carb),
       protein: Number(this.state.protein),
       count: this.state.count,
-      date: d.getDate()
     };
     DataManager.get("foods", this.props.match.params.foodId)
       .then(food => {

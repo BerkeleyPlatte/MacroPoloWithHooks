@@ -4,7 +4,8 @@ import Table from "react-bootstrap/Table";
 
 export default class ReportCard extends Component {
   render() {
-    let d = new Date();
+    let todaysDate = `${new Date().getMonth() +
+      1}/${new Date().getDate()}/${new Date().getFullYear()}`;
     let totalFat = Number(localStorage.getItem("fatSoFar")).toFixed(1);
     let totalCarb = Number(localStorage.getItem("carbSoFar")).toFixed(1);
     let totalProtein = Number(localStorage.getItem("proteinSoFar")).toFixed(1);
@@ -12,7 +13,7 @@ export default class ReportCard extends Component {
       <>
         <div className="table">
           <Table striped bordered hover size="sm">
-            <caption>{d.getDate()}</caption>
+            <caption>{todaysDate}</caption>
             <thead>
               <tr>
                 <th>Foods</th>
