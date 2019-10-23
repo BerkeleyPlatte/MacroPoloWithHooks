@@ -7,6 +7,7 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import FoodEditForm from "./foods/FoodEditForm";
 import FoodForm from "./foods/FoodForm";
+import ReportList from "./reports/ReportList";
 
 // AppViews is the parent
 class AppViews extends Component {
@@ -15,6 +16,8 @@ class AppViews extends Component {
   state = {
     foods: [],
     users: [],
+    eatenFoods: [],
+    filteredFoods: [],
     fatSoFar: 0,
     carbSoFar: 0,
     proteinSoFar: 0
@@ -63,6 +66,18 @@ class AppViews extends Component {
     });
   };
 
+  getFilteredFoods = () => {
+    return DataManager.getSorted(
+      "foods",
+      sessionStorage.getItem("userId")
+    ).then(foods => {
+      let filteredFoods = foods.filter(food => food.count > 0);
+      this.setState({ filteredFoods: filteredFoods });
+      console.log("array", filteredFoods);
+      console.log("state", this.state.filteredFoods);
+    });
+  };
+
   componentDidMount() {
     const newState = {};
 
@@ -102,6 +117,17 @@ class AppViews extends Component {
       .then(foods =>
         this.setState({
           foods: foods
+        })
+      );
+  };
+
+  addEatenFood = eatenFood => {
+    return DataManager.post(eatenFood, "eatenFoods")
+      .then(() => DataManager.getAll("eatenFoods"))
+
+      .then(eatenFoods =>
+        this.setState({
+          eatenFoods: eatenFoods
         })
       );
   };
@@ -176,6 +202,9 @@ class AppViews extends Component {
                   users={this.state.users}
                   updateUser={this.updateUser}
                   revertUserCounts={this.revertUserCounts}
+                  addEatenFood={this.addEatenFood}
+                  getFilteredFoods={this.getFilteredFoods}
+                  filteredFoods={this.state.filteredFoods}
                 />
               );
             } else {
@@ -213,18 +242,23 @@ class AppViews extends Component {
             );
           }}
         />
-        {/* 
+
         <Route
           exact
-          path="/foods"
+          path="/reports"
           render={props => {
             if (this.isAuthenticated()) {
-              return null;
+              return (
+                <ReportList
+                  {...props}
+                  filteredFoods={this.state.filteredFoods}
+                />
+              );
             } else {
               return <Redirect to="/" />;
             }
           }}
-        /> */}
+        />
       </React.Fragment>
     );
   }

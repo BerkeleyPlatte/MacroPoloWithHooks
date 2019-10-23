@@ -4,20 +4,23 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 class NavBar extends Component {
   clearStorage = () => {
-    localStorage.clear()
+    localStorage.clear();
     sessionStorage.clear();
   };
   render() {
     return (
       <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
-        <ul className="nav nav-pills nav-fill">
+            <h3>MacroPolo</h3>
+        <ul className="nav">
           <li className="nav-item">
             <Link className="nav-link" to="/foods">
-              <h3>MacroPolo</h3>
+              <h5>Today</h5>
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/foods" />
+            <Link className="nav-link" to="/reports">
+              <h5>Days Gone By</h5>
+            </Link>
           </li>
         </ul>
 

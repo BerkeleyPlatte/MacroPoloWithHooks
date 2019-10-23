@@ -12,7 +12,6 @@ export default class FoodList extends Component {
     weight: 0,
     userName: "",
     password: ""
-    
   };
 
   handleFieldChange = evt => {
@@ -22,11 +21,10 @@ export default class FoodList extends Component {
   };
 
   updateExistingUser = () => {
-
     let editedUser = {
       id: Number(sessionStorage.getItem("userId")),
       userName: this.state.userName,
-      weight: this.state.weight,
+      weight: Number(this.state.weight),
       password: this.state.password
     };
 
@@ -52,7 +50,7 @@ export default class FoodList extends Component {
       user => {
         this.setState({
           userName: user.userName,
-          weight: user.weight,
+          weight: Number(user.weight),
           password: user.password
         });
       }
@@ -67,26 +65,24 @@ export default class FoodList extends Component {
     return (
       <div>
         <div className="d-flex flex-row justify-content-center">
-
-        <label className="mt-2 mb-2">Weight:</label>
-        &nbsp;
-        <input
-          type="text"
-          className="form-control-sm mt-2 mb-2"
-          id="weight"
-          placeholder={weight}
-          onChange={this.handleFieldChange}
-        />
-        <button
-          type="button"
-          className="btn mt-2 mb-2 btn-secondary btn-sm"
-          onClick={() => {
-            this.updateExistingUser();
-            
-          }}
-        >
-          Save Weight
-        </button>
+          <label className="mt-2 mb-2">Weight:</label>
+          &nbsp;
+          <input
+            type="text"
+            className="form-control-sm mt-2 mb-2"
+            id="weight"
+            placeholder={weight}
+            onChange={this.handleFieldChange}
+          />
+          <button
+            type="button"
+            className="btn mt-2 mb-2 btn-secondary btn-sm"
+            onClick={() => {
+              this.updateExistingUser();
+            }}
+          >
+            Save Weight
+          </button>
         </div>
         <section className="d-flex flex-wrap border border-primary rounded container pre-scrollable">
           {this.props.foods
@@ -105,6 +101,7 @@ export default class FoodList extends Component {
                 proteinSoFar={this.props.proteinSoFar}
                 makeMacrosArrs={this.props.makeMacrosArrs}
                 revertUserCounts={this.props.revertUserCounts}
+                addEatenFood={this.props.addEatenFood}
               />
             ))}
         </section>
@@ -171,19 +168,29 @@ export default class FoodList extends Component {
               <tr>
                 <td>Fat</td>
                 <td>{Number(localStorage.getItem("fatSoFar")).toFixed(1)}</td>
-                <td>{(fatGoal-localStorage.getItem("fatSoFar")).toFixed(1)}</td>
+                <td>
+                  {(fatGoal - localStorage.getItem("fatSoFar")).toFixed(1)}
+                </td>
                 <td>{fatGoal}</td>
               </tr>
               <tr>
                 <td>Carbs</td>
                 <td>{Number(localStorage.getItem("carbSoFar")).toFixed(1)}</td>
-                <td>{(carbGoal-localStorage.getItem("carbSoFar")).toFixed(1)}</td>
+                <td>
+                  {(carbGoal - localStorage.getItem("carbSoFar")).toFixed(1)}
+                </td>
                 <td>{carbGoal}</td>
               </tr>
               <tr>
                 <td>Protein</td>
-                <td>{Number(localStorage.getItem("proteinSoFar")).toFixed(1)}</td>
-                <td>{(proteinGoal-localStorage.getItem("proteinSoFar")).toFixed(1)}</td>
+                <td>
+                  {Number(localStorage.getItem("proteinSoFar")).toFixed(1)}
+                </td>
+                <td>
+                  {(proteinGoal - localStorage.getItem("proteinSoFar")).toFixed(
+                    1
+                  )}
+                </td>
                 <td>{proteinGoal}</td>
               </tr>
             </tbody>
@@ -201,6 +208,17 @@ export default class FoodList extends Component {
             }}
           >
             Clear
+          </button>
+        </section>
+        <section>
+          <button
+            type="button"
+            className="btn btn-secondary btn generateBtn"
+            onClick={() => {
+              this.props.getFilteredFoods();
+            }}
+          >
+            Generate
           </button>
         </section>
       </div>
