@@ -12,18 +12,15 @@ export default class FoodCard extends Component {
     fat: 0,
     carb: 0,
     protein: 0,
-    date: "",
     foodId: 0
   };
 
   createNewEatenFood = () => {
-    let d = new Date();
 
     if (this.props.food.count === 0) {
       let newEatenFood = {
         userId: Number(sessionStorage.getItem("userId")),
         foodId: this.props.food.id,
-        date: d.getDate()
       };
       this.props.addEatenFood(newEatenFood);
     }
@@ -37,7 +34,6 @@ export default class FoodCard extends Component {
       fat: this.state.fat,
       carb: this.state.carb,
       protein: this.state.protein,
-      date: this.state.date,
       count: this.state.count
     };
     this.props.updateFood(editedFood).then(() => {
@@ -51,7 +47,6 @@ export default class FoodCard extends Component {
       this.setState({
         userId: food.userId,
         name: food.name,
-        date: food.date,
         fat: food.fat,
         carb: food.carb,
         protein: food.protein,

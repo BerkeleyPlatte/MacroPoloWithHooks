@@ -9,7 +9,6 @@ export default class FoodForm extends Component {
     id: "",
     userId: "",
     foodId: "",
-    date: "",
     count: 0
   };
 
@@ -21,7 +20,6 @@ export default class FoodForm extends Component {
 
   constructNewFood = evt => {
     evt.preventDefault();
-    let d = new Date();
 
     let newFood = {
       name: this.state.name,
@@ -30,7 +28,6 @@ export default class FoodForm extends Component {
       protein: Number(this.state.protein),
       userId: Number(sessionStorage.getItem("userId")),
       count: Number(this.state.count),
-      date: d.getDate()
     };
    
 
