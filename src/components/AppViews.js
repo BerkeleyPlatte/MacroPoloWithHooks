@@ -73,7 +73,8 @@ class AppViews extends Component {
     ).then(foods => {
       let filteredFoods = foods.filter(food => food.count > 0);
       this.setState({ filteredFoods: filteredFoods });
-      console.log(filteredFoods)
+      console.log("array", filteredFoods);
+      console.log("state", this.state.filteredFoods);
     });
   };
 
@@ -242,17 +243,22 @@ class AppViews extends Component {
           }}
         />
 
-        {/* <Route
+        <Route
           exact
           path="/reports"
           render={props => {
             if (this.isAuthenticated()) {
-              return <ReportList {...props} />;
+              return (
+                <ReportList
+                  {...props}
+                  filteredFoods={this.state.filteredFoods}
+                />
+              );
             } else {
               return <Redirect to="/" />;
             }
           }}
-        /> */}
+        />
       </React.Fragment>
     );
   }
