@@ -5,14 +5,14 @@ import Table from "react-bootstrap/Table";
 export default class ReportCard extends Component {
   render() {
     let d = new Date();
-    let totalFat = Number(localStorage.getItem("fatSoFar"));
-    let totalCarb = Number(localStorage.getItem("carbSoFar"));
-    let totalProtein = Number(localStorage.getItem("proteinSoFar"));
+    let totalFat = Number(localStorage.getItem("fatSoFar")).toFixed(1);
+    let totalCarb = Number(localStorage.getItem("carbSoFar")).toFixed(1);
+    let totalProtein = Number(localStorage.getItem("proteinSoFar")).toFixed(1);
     return (
       <>
         <div className="table">
           <Table striped bordered hover size="sm">
-              <caption>{d.getDate()}</caption>
+            <caption>{d.getDate()}</caption>
             <thead>
               <tr>
                 <th>Foods</th>
@@ -27,13 +27,15 @@ export default class ReportCard extends Component {
                 return (
                   <tr key={food.id}>
                     <td>{`${food.name} x ${food.count}`}</td>
-                    <td>{food.fat * food.count}</td>
-                    <td>{food.carb * food.count}</td>
-                    <td>{food.protein * food.count}</td>
+                    <td>{(food.fat * food.count).toFixed(1)}</td>
+                    <td>{(food.carb * food.count).toFixed(1)}</td>
+                    <td>{(food.protein * food.count).toFixed(1)}</td>
                     <td>
-                      {food.fat * food.count * 9 +
+                      {(
+                        food.fat * food.count * 9 +
                         food.carb * food.count * 4 +
-                        food.protein * food.count * 4}
+                        food.protein * food.count * 4
+                      ).toFixed(1)}
                     </td>
                   </tr>
                 );
