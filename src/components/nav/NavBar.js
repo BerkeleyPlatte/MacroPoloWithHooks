@@ -10,7 +10,7 @@ class NavBar extends Component {
   render() {
     return (
       <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
-            <h3>MacroPolo</h3>
+            <h3>Macro Polo</h3>
         <ul className="nav">
           <li className="nav-item">
             <Link className="nav-link" to="/foods">
