@@ -11,7 +11,10 @@ export default class FoodList extends Component {
     action: "add",
     weight: 0,
     userName: "",
-    password: ""
+    password: "",
+    fatFactor: 0,
+    carbFactor: 0,
+    proteinFactor: 0
   };
 
   handleFieldChange = evt => {
@@ -51,7 +54,10 @@ export default class FoodList extends Component {
         this.setState({
           userName: user.userName,
           weight: Number(user.weight),
-          password: user.password
+          password: user.password,
+          fatFactor: Number(user.fatFactor),
+          carbFactor: Number(user.carbFactor),
+          proteinFactor: Number(user.proteinFactor)
         });
       }
     );
@@ -59,9 +65,9 @@ export default class FoodList extends Component {
 
   render() {
     let weight = this.state.weight;
-    let fatGoal = (weight * 0.3777).toFixed(1);
-    let carbGoal = (weight * 0.9722).toFixed(1);
-    let proteinGoal = (weight * 1.1388).toFixed(1);
+    let fatGoal = (weight * this.state.fatFactor).toFixed(1);
+    let carbGoal = (weight * this.state.carbFactor).toFixed(1);
+    let proteinGoal = (weight * this.state.proteinFactor).toFixed(1);
     return (
       <div>
         <div className="d-flex flex-row justify-content-center">

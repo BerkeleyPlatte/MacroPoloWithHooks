@@ -5,7 +5,10 @@ export default class Register extends Component {
   state = {
     userName: "",
     weight: 0,
-    password: ""
+    password: "",
+    fatFactor: 0,
+    carbFactor: 0,
+    proteinFactor: 0,
   };
 
   handleFieldChange = evt => {
@@ -28,8 +31,11 @@ export default class Register extends Component {
       } else {
         let newUser = {
           userName: this.state.userName,
-          weight: this.state.weight,
-          password: this.state.password
+          weight: Number(this.state.weight),
+          password: this.state.password,
+          fatFactor: 0.2,
+          carbFactor: 1,
+          proteinFactor: 1.2
         };
         this.props.addUser(newUser).then(() =>
           DataManager.getAll("users")
@@ -52,7 +58,7 @@ export default class Register extends Component {
           Please Sign Up
         </h1>
         <div className="d-flex justify-content-center">
-          <label htmlFor="inputPassword">User Name:&nbsp;</label>
+          <label htmlFor="inputUserName">User Name:&nbsp;</label>
           <input
             onChange={this.handleFieldChange}
             type="userName"
@@ -69,6 +75,17 @@ export default class Register extends Component {
             type="password"
             id="password"
             placeholder="Password"
+            required=""
+          />
+        </div>
+        <br />
+        <div className="d-flex justify-content-center">
+          <label htmlFor="inputPassword">Weight:&nbsp;</label>
+          <input
+            onChange={this.handleFieldChange}
+            type="number"
+            id="weight"
+            placeholder="Weight"
             required=""
           />
         </div>
