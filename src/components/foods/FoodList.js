@@ -211,15 +211,15 @@ export default class FoodList extends Component {
           </button>
         </section>
         <section>
-          <button
-            type="button"
-            className="btn btn-secondary btn generateBtn"
-            onClick={() => {
-              this.props.getFilteredFoods();
-            }}
-          >
-            Generate
-          </button>
+            <button
+              type="button"
+              className="btn btn-secondary btn generateBtn"
+              onClick={() => {
+                this.props.getFilteredFoods();
+              }}
+            >
+              Generate
+            </button>
         </section>
       </div>
     );
