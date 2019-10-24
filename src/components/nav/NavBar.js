@@ -14,12 +14,12 @@ class NavBar extends Component {
         <ul className="nav">
           <li className="nav-item">
             <Link className="nav-link" to="/foods">
-              <h5>Today</h5>
+              <h5>Food</h5>
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/reports">
-              <h5>Days Gone By</h5>
+              <h5>Report</h5>
             </Link>
           </li>
         </ul>

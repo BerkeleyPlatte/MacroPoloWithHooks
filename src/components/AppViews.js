@@ -8,6 +8,8 @@ import Register from "./auth/Register";
 import FoodEditForm from "./foods/FoodEditForm";
 import FoodForm from "./foods/FoodForm";
 import ReportList from "./reports/ReportList";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
 // AppViews is the parent
 class AppViews extends Component {
@@ -20,7 +22,8 @@ class AppViews extends Component {
     filteredFoods: [],
     fatSoFar: 0,
     carbSoFar: 0,
-    proteinSoFar: 0
+    proteinSoFar: 0,
+    show: false
   };
 
   revertUserCounts = () => {
@@ -66,16 +69,48 @@ class AppViews extends Component {
     });
   };
 
+  handleShow = () => {
+    this.setState({ show: true });
+    console.log("handleShow called", this.state.show);
+  };
+
+  exampleAndShow = () => {
+    console.log("exampleAndShow called");
+    this.example();
+    this.handleShow();
+  };
+
+  example = () => {
+    console.log("example called");
+    const handleClose = () => {
+      this.setState({ show: false });
+    };
+
+    return (
+      <>
+        <Modal show={this.state.show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal heading</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+    );
+  };
+
   getFilteredFoods = () => {
-    return DataManager.getSorted(
-      "foods",
-      sessionStorage.getItem("userId")
-    ).then(foods => {
-      let filteredFoods = foods.filter(food => food.count > 0);
-      this.setState({ filteredFoods: filteredFoods });
-      console.log("array", filteredFoods);
-      console.log("state", this.state.filteredFoods);
-    });
+    console.log(this.state.show);
+    return DataManager.getSorted("foods", sessionStorage.getItem("userId"))
+      .then(foods => {
+        let filteredFoods = foods.filter(food => food.count > 0);
+        this.setState({ filteredFoods: filteredFoods });
+      })
+      .then(this.exampleAndShow());
   };
 
   componentDidMount() {

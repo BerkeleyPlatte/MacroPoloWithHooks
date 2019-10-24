@@ -11,7 +11,7 @@ export default class ReportCard extends Component {
     let totalProtein = Number(localStorage.getItem("proteinSoFar")).toFixed(1);
     return (
       <>
-        <div className="table">
+        <div className="table" id="divToPrint">
           <Table striped bordered hover size="sm">
             <caption>{todaysDate}</caption>
             <thead>
