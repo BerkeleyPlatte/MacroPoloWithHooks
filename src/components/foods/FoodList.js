@@ -83,6 +83,15 @@ export default class FoodList extends Component {
           >
             Save Weight
           </button>
+          <button
+            type="button"
+            className="btn mt-2 mb-2 btn-secondary btn-sm"
+            onClick={() => {
+              this.updateExistingUser();
+            }}
+          >
+            Settings
+          </button>
         </div>
         <section className="d-flex flex-wrap border border-primary rounded container pre-scrollable">
           {this.props.foods
@@ -209,17 +218,15 @@ export default class FoodList extends Component {
           >
             Clear
           </button>
-        </section>
-        <section>
-            <button
-              type="button"
-              className="btn btn-secondary btn generateBtn"
-              onClick={() => {
-                this.props.getFilteredFoods();
-              }}
-            >
-              Generate
-            </button>
+          <button
+            type="button"
+            className="btn btn-secondary btn generateBtn"
+            onClick={() => {
+              this.props.getFilteredFoods();
+            }}
+          >
+            Generate
+          </button>
         </section>
       </div>
     );

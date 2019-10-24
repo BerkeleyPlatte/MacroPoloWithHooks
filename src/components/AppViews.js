@@ -113,6 +113,7 @@ class AppViews extends Component {
       .then(this.exampleAndShow());
   };
 
+
   componentDidMount() {
     const newState = {};
 
@@ -277,6 +278,22 @@ class AppViews extends Component {
             );
           }}
         />
+        {/* <Route
+          path="/settings/:userId(\d+)/"
+          render={props => {
+            return (
+              <SettingsForm
+                {...props}
+                fatSoFar={this.state.fatSoFar}
+                carbSoFar={this.state.carbSoFar}
+                proteinSoFar={this.state.proteinSoFar}
+                makeMacrosArrs={this.makeMacrosArrs}
+                users={this.state.users}
+                updateUser={this.updateUser}
+              />
+            );
+          }}
+        /> */}
 
         <Route
           exact
