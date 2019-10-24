@@ -5,6 +5,8 @@ import html2canvas from "html2canvas";
 
 export default class Export extends Component {
   printDocument() {
+    let todaysDate = `${new Date().getMonth() +
+      1}/${new Date().getDate()}/${new Date().getFullYear()}`;
     const input = document.getElementById("divToPrint");
     html2canvas(input).then(canvas => {
       const imgData = canvas.toDataURL("image/png");
@@ -18,7 +20,7 @@ export default class Export extends Component {
         Number(document.getElementById("divToPrint").style.height)
       );
       // pdf.output('dataurlnewwindow');
-      pdf.save("download.pdf");
+      pdf.save(`Diet Report - ${todaysDate}.pdf`);
     });
   }
 
