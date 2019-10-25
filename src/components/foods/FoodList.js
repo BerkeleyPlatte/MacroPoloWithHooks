@@ -66,8 +66,8 @@ export default class FoodList extends Component {
   render() {
     let weight = this.state.weight;
     // let currentUser = this.props.users.filter(user => 
-    //   user.id === sessionStorage.getItem("userId")
-    //   );
+    //   user.id === Number(sessionStorage.getItem("userId")
+    //   ));
     //   console.log("hello", this.props.users)
     // let fatGoal = (weight * currentUser.fatFactor).toFixed(1);
     // let carbGoal = (weight * currentUser.carbFactor).toFixed(1);
