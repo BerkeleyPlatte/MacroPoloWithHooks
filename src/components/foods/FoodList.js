@@ -65,6 +65,13 @@ export default class FoodList extends Component {
 
   render() {
     let weight = this.state.weight;
+    // let currentUser = this.props.users.filter(user => 
+    //   user.id === sessionStorage.getItem("userId")
+    //   );
+    //   console.log("hello", this.props.users)
+    // let fatGoal = (weight * currentUser.fatFactor).toFixed(1);
+    // let carbGoal = (weight * currentUser.carbFactor).toFixed(1);
+    // let proteinGoal = (weight * currentUser.proteinFactor).toFixed(1);
     let fatGoal = (weight * this.state.fatFactor).toFixed(1);
     let carbGoal = (weight * this.state.carbFactor).toFixed(1);
     let proteinGoal = (weight * this.state.proteinFactor).toFixed(1);
@@ -93,7 +100,9 @@ export default class FoodList extends Component {
             type="button"
             className="btn mt-2 mb-2 btn-secondary btn-sm"
             onClick={() => {
-              this.props.history.push(`settings/${sessionStorage.getItem("userId")}`);
+              this.props.history.push(
+                `settings/${sessionStorage.getItem("userId")}`
+              );
             }}
           >
             Settings
