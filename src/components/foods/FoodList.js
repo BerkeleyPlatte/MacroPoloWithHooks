@@ -93,7 +93,7 @@ export default class FoodList extends Component {
             type="button"
             className="btn mt-2 mb-2 btn-secondary btn-sm"
             onClick={() => {
-              this.updateExistingUser();
+              this.props.history.push(`settings/${sessionStorage.getItem("userId")}`);
             }}
           >
             Settings

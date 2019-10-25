@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import DataManager from "../../module/DataManager";
+import "./settings.css";
 
-export default class FoodEditForm extends Component {
+export default class SettingsForm extends Component {
   state = {
-    userId: "",
-    name: "",
-    carb: 0,
-    fat: 0,
-    protein: 0,
-    count: 0
+    id: 0,
+    userName: "",
+    weight: 0,
+    password: "",
+    fatFactor: 0,
+    carbFactor: 0,
+    proteinFactor: 0
   };
 
   handleFieldChange = evt => {
@@ -17,57 +19,33 @@ export default class FoodEditForm extends Component {
     this.setState(stateToChange);
   };
 
-  updateExistingFood = evt => {
+  updateExistingUser = evt => {
     evt.preventDefault();
 
-    const editedFood = {
-      id: this.props.match.params.foodId,
-      userId: parseInt(sessionStorage.getItem("userId")),
-      name: this.state.name,
-      fat: Number(this.state.fat),
-      carb: Number(this.state.carb),
-      protein: Number(this.state.protein),
-      count: this.state.count
+    let editedUser = {
+      id: Number(sessionStorage.getItem("userId")),
+      userName: this.state.userName,
+      weight: Number(this.state.weight),
+      password: this.state.password,
+      fatFactor: Number(this.state.fatFactor),
+      carbFactor: Number(this.state.carbFactor),
+      proteinFactor: Number(this.state.proteinFactor)
     };
-    DataManager.get("foods", this.props.match.params.foodId)
-      .then(food => {
-        localStorage.setItem(
-          "fatSoFar",
-          localStorage.getItem("fatSoFar") -
-            food.fat * food.count +
-            editedFood.fat * editedFood.count
-        );
-        localStorage.setItem(
-          "carbSoFar",
-          localStorage.getItem("carbSoFar") -
-            food.carb * food.count +
-            editedFood.carb * editedFood.count
-        );
-        localStorage.setItem(
-          "proteinSoFar",
-          localStorage.getItem("proteinSoFar") -
-            food.protein * food.count +
-            editedFood.protein * editedFood.count
-        );
-      })
-      .then(() =>
-        this.props
-          .updateFood(editedFood)
 
-          .then(() => this.props.history.push("/foods"))
-      );
+    this.props.updateUser(editedUser).then(this.props.history.push("/foods"));
   };
 
   componentDidMount() {
-    return DataManager.get("foods", this.props.match.params.foodId).then(
-      food => {
+    return DataManager.get("users", this.props.match.params.userId).then(
+      user => {
         this.setState({
-          userId: food.userId,
-          name: food.name,
-          fat: food.fat,
-          carb: food.carb,
-          protein: food.protein,
-          count: food.count
+          id: Number(user.id),
+          userName: user.userName,
+          weight: Number(user.weight),
+          password: user.password,
+          fatFactor: Number(user.fatFactor),
+          carbFactor: Number(user.carbFactor),
+          proteinFactor: Number(user.proteinFactor)
         });
       }
     );
@@ -76,55 +54,55 @@ export default class FoodEditForm extends Component {
   render() {
     return (
       <React.Fragment>
-        <form className="foodForm">
+        <form className="userForm">
+          <header>Set Your Goals for Each Macro</header>
+          <br />
           <div className="form-group">
-            <label htmlFor="food">Food name</label>
+            <label htmlFor="fat">
+              Grams of fat per pound of body weight per day:
+            </label>
             <input
-              type="text"
+              type="number"
+              step=".0001"
               required
-              placeholder={this.state.name}
+              placeholder={this.state.fatFactor}
               className="form-control"
               onChange={this.handleFieldChange}
-              id="name"
+              id="fatFactor"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="fat">Fat</label>
+            <label htmlFor="carb">
+              Grams of carbs per pound of body weight per day:
+            </label>
             <input
-              type="text"
+              type="number"
+              step=".0001"
               required
-              placeholder={this.state.fat}
+              placeholder={this.state.carbFactor}
               className="form-control"
               onChange={this.handleFieldChange}
-              id="fat"
+              id="carbFactor"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="carb">Carbs</label>
+            <label htmlFor="protein">
+              Grams of protein per pound of body weight per day:
+            </label>
             <input
-              type="text"
+              type="number"
+              step=".0001"
               required
-              placeholder={this.state.carb}
+              placeholder={this.state.proteinFactor}
               className="form-control"
               onChange={this.handleFieldChange}
-              id="carb"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="protein">Protein</label>
-            <input
-              type="text"
-              required
-              placeholder={this.state.protein}
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="protein"
+              id="proteinFactor"
             />
           </div>
 
           <button
             type="submit"
-            onClick={this.updateExistingFood}
+            onClick={this.updateExistingUser}
             className="btn btn-primary"
           >
             Submit
