@@ -10,6 +10,7 @@ import FoodForm from "./foods/FoodForm";
 import ReportList from "./reports/ReportList";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import SettingsForm from "./settings/SettingsForm"
 
 // AppViews is the parent
 class AppViews extends Component {
@@ -71,17 +72,14 @@ class AppViews extends Component {
 
   handleShow = () => {
     this.setState({ show: true });
-    console.log("handleShow called", this.state.show);
   };
 
   exampleAndShow = () => {
-    console.log("exampleAndShow called");
     this.example();
     this.handleShow();
   };
 
   example = () => {
-    console.log("example called");
     const handleClose = () => {
       this.setState({ show: false });
     };
@@ -104,7 +102,6 @@ class AppViews extends Component {
   };
 
   getFilteredFoods = () => {
-    console.log(this.state.show);
     return DataManager.getSorted("foods", sessionStorage.getItem("userId"))
       .then(foods => {
         let filteredFoods = foods.filter(food => food.count > 0);
@@ -278,7 +275,7 @@ class AppViews extends Component {
             );
           }}
         />
-        {/* <Route
+        <Route
           path="/settings/:userId(\d+)/"
           render={props => {
             return (
@@ -293,7 +290,7 @@ class AppViews extends Component {
               />
             );
           }}
-        /> */}
+        />
 
         <Route
           exact

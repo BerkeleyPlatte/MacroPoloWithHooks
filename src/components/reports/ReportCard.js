@@ -48,7 +48,7 @@ export default class ReportCard extends Component {
                 <th>{totalFat}</th>
                 <th>{totalCarb}</th>
                 <th>{totalProtein}</th>
-                <th>{totalFat * 9 + totalCarb * 4 + totalProtein * 4}</th>
+                <th>{(totalFat * 9 + totalCarb * 4 + totalProtein * 4).toFixed(1)}</th>
               </tr>
             </tfoot>
           </Table>
