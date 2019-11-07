@@ -1,7 +1,10 @@
 .foodsButton {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 0 14.2% 10px 14.2%;
+  /* display: flex;
+  justify-content: space-evenly; */
+  /* margin: 0 14.2% 10px 14.2%; */
+  min-width: 335px;
+  max-width: 550px;
+  margin: 0 auto;
 }
 
 .container {
@@ -31,15 +34,20 @@
 }
 
 .clearBtn {
-  margin-left: 28.2%;
   margin-top: 5px;
   margin-bottom: 15px;
 }
-/* .generateBtn {
-  margin-right: 28.2%;
+
+.mt-3 {
+  margin-top: 0px !important;
+  float: right;
+  margin-bottom: 15px;
+}
+.generateBtn {
+  float: right;
   margin-top: 5px;
   margin-bottom: 15px;
-} */
+}
 /* .createBtn {
   margin-left: 28.2%;
   
