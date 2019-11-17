@@ -24,6 +24,8 @@ class AppViews extends Component {
     fatSoFar: 0,
     carbSoFar: 0,
     proteinSoFar: 0,
+    sodiumSoFar: 0,
+    fiberSoFar: 0,
     show: false
   };
 
@@ -47,6 +49,8 @@ class AppViews extends Component {
     let fatCount = [];
     let carbCount = [];
     let proteinCount = [];
+    let sodiumCount = [];
+    let fiberCount = [];
     return DataManager.getSorted(
       "foods",
       sessionStorage.getItem("userId")
@@ -55,17 +59,25 @@ class AppViews extends Component {
         fatCount.push(food.fat * food.count);
         carbCount.push(food.carb * food.count);
         proteinCount.push(food.protein * food.count);
+        sodiumCount.push(food.sodium * food.count);
+        fiberCount.push(food.fiber * food.count);
       });
       let fatSum = fatCount.reduce((curr, next) => curr + next, 0);
       let carbSum = carbCount.reduce((curr, next) => curr + next, 0);
       let proteinSum = proteinCount.reduce((curr, next) => curr + next, 0);
+      let sodiumSum = sodiumCount.reduce((curr, next) => curr + next, 0);
+      let fiberSum = fiberCount.reduce((curr, next) => curr + next, 0);
       localStorage.setItem("fatSoFar", fatSum);
       localStorage.setItem("carbSoFar", carbSum);
       localStorage.setItem("proteinSoFar", proteinSum);
+      localStorage.setItem("sodiumSoFar", sodiumSum);
+      localStorage.setItem("fiberSoFar", fiberSum);
       this.setState({
         fatSoFar: fatSum,
         carbSoFar: carbSum,
-        proteinSoFar: proteinSum
+        proteinSoFar: proteinSum,
+        sodiumSoFar: sodiumSum,
+        fiberSoFar: fiberSum
       });
     });
   };
@@ -232,6 +244,8 @@ class AppViews extends Component {
                   fatSoFar={this.state.fatSoFar}
                   carbSoFar={this.state.carbSoFar}
                   proteinSoFar={this.state.proteinSoFar}
+                  sodiumSoFar={this.state.sodiumSoFar}
+                  fiberSoFar={this.state.fiberSoFar}
                   users={this.state.users}
                   updateUser={this.updateUser}
                   revertUserCounts={this.revertUserCounts}
@@ -268,6 +282,8 @@ class AppViews extends Component {
                 fatSoFar={this.state.fatSoFar}
                 carbSoFar={this.state.carbSoFar}
                 proteinSoFar={this.state.proteinSoFar}
+                sodiumSoFar={this.state.sodiumSoFar}
+                fiberSoFar={this.state.fiberSoFar}
                 makeMacrosArrs={this.makeMacrosArrs}
                 foods={this.state.foods}
                 updateFood={this.updateFood}
@@ -284,6 +300,8 @@ class AppViews extends Component {
                 fatSoFar={this.state.fatSoFar}
                 carbSoFar={this.state.carbSoFar}
                 proteinSoFar={this.state.proteinSoFar}
+                sodiumSoFar={this.state.sodiumSoFar}
+                fiberSoFar={this.state.fiberSoFar}
                 makeMacrosArrs={this.makeMacrosArrs}
                 users={this.state.users}
                 updateUser={this.updateUser}

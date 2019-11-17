@@ -9,6 +9,8 @@ export default class Register extends Component {
     fatFactor: 0,
     carbFactor: 0,
     proteinFactor: 0,
+    sodiumFactor: 0,
+    fiberFactor: 0
   };
 
   handleFieldChange = evt => {
@@ -35,7 +37,9 @@ export default class Register extends Component {
           password: this.state.password,
           fatFactor: 0.2,
           carbFactor: 1,
-          proteinFactor: 1.2
+          proteinFactor: 1.2,
+          sodiumFactor: 0,
+          fiberFactor: 0
         };
         this.props.addUser(newUser).then(() =>
           DataManager.getAll("users")

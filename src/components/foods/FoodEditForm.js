@@ -8,6 +8,8 @@ export default class FoodEditForm extends Component {
     carb: 0,
     fat: 0,
     protein: 0,
+    sodium: 0,
+    fiber: 0,
     count: 0
   };
 
@@ -28,6 +30,8 @@ export default class FoodEditForm extends Component {
       fat: Number(this.state.fat),
       carb: Number(this.state.carb),
       protein: Number(this.state.protein),
+      sodium: Number(this.state.sodium),
+      fiber: Number(this.state.fiber),
       count: this.state.count,
     };
     DataManager.get("foods", this.props.match.params.foodId)
@@ -50,6 +54,18 @@ export default class FoodEditForm extends Component {
             food.protein * food.count +
             editedFood.protein * editedFood.count
         );
+        localStorage.setItem(
+          "sodiumSoFar",
+          localStorage.getItem("sodiumSoFar") -
+            food.sodium * food.count +
+            editedFood.sodium * editedFood.count
+        );
+        localStorage.setItem(
+          "fiberSoFar",
+          localStorage.getItem("fiberSoFar") -
+            food.fiber * food.count +
+            editedFood.fiber * editedFood.count
+        );
       })
       .then(() =>
         this.props
@@ -68,6 +84,8 @@ export default class FoodEditForm extends Component {
           fat: food.fat,
           carb: food.carb,
           protein: food.protein,
+          sodium: food.sodium,
+          fiber: food.fiber,
           count: food.count
         });
       }
@@ -120,6 +138,28 @@ export default class FoodEditForm extends Component {
               className="form-control"
               onChange={this.handleFieldChange}
               id="protein"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="sodium">Sodium (mg)</label>
+            <input
+              type="text"
+              required
+              placeholder={this.state.sodium}
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="sodium"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="fiber">Fiber</label>
+            <input
+              type="text"
+              required
+              placeholder={this.state.fiber}
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="fiber"
             />
           </div>
 

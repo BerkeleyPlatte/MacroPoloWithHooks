@@ -10,7 +10,9 @@ export default class SettingsForm extends Component {
     password: "",
     fatFactor: 0,
     carbFactor: 0,
-    proteinFactor: 0
+    proteinFactor: 0,
+    sodiumFactor: 0,
+    fiberFactor: 0
   };
 
   handleFieldChange = evt => {
@@ -29,7 +31,9 @@ export default class SettingsForm extends Component {
       password: this.state.password,
       fatFactor: Number(this.state.fatFactor),
       carbFactor: Number(this.state.carbFactor),
-      proteinFactor: Number(this.state.proteinFactor)
+      proteinFactor: Number(this.state.proteinFactor),
+      sodiumFactor: Number(this.state.sodiumFactor),
+      fiberFactor: Number(this.state.fiberFactor)
     };
 
     this.props.updateUser(editedUser).then(this.props.history.push("/foods"));
@@ -45,7 +49,9 @@ export default class SettingsForm extends Component {
           password: user.password,
           fatFactor: Number(user.fatFactor),
           carbFactor: Number(user.carbFactor),
-          proteinFactor: Number(user.proteinFactor)
+          proteinFactor: Number(user.proteinFactor),
+          sodiumFactor: Number(user.sodiumFactor),
+          fiberFactor: Number(user.fiberFactor)
         });
       }
     );
@@ -97,6 +103,34 @@ export default class SettingsForm extends Component {
               className="form-control"
               onChange={this.handleFieldChange}
               id="proteinFactor"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="sodium">
+              Milligrams of sodium per pound of body weight per day:
+            </label>
+            <input
+              type="number"
+              step=".0001"
+              required
+              placeholder={this.state.sodiumFactor}
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="sodiumFactor"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="fiber">
+              Grams of fiber per pound of body weight per day:
+            </label>
+            <input
+              type="number"
+              step=".0001"
+              required
+              placeholder={this.state.fiberFactor}
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="fiberFactor"
             />
           </div>
 

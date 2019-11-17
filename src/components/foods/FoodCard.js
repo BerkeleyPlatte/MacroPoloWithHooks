@@ -12,6 +12,8 @@ export default class FoodCard extends Component {
     fat: 0,
     carb: 0,
     protein: 0,
+    sodium: 0,
+    fiber: 0,
     foodId: 0
   };
 
@@ -34,6 +36,8 @@ export default class FoodCard extends Component {
       fat: this.state.fat,
       carb: this.state.carb,
       protein: this.state.protein,
+      sodium: this.state.sodium,
+      fiber: this.state.fiber,
       count: this.state.count
     };
     this.props.updateFood(editedFood).then(() => {
@@ -50,6 +54,8 @@ export default class FoodCard extends Component {
         fat: food.fat,
         carb: food.carb,
         protein: food.protein,
+        sodium: food.sodium,
+        fiber: food.fiber,
         count: food.count,
         foodId: food.id
       });

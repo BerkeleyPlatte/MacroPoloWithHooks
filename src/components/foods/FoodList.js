@@ -14,7 +14,9 @@ export default class FoodList extends Component {
     password: "",
     fatFactor: 0,
     carbFactor: 0,
-    proteinFactor: 0
+    proteinFactor: 0,
+    sodiumFactor: 0,
+    fiberFactor: 0
   };
 
   handleFieldChange = evt => {
@@ -57,7 +59,9 @@ export default class FoodList extends Component {
           password: user.password,
           fatFactor: Number(user.fatFactor),
           carbFactor: Number(user.carbFactor),
-          proteinFactor: Number(user.proteinFactor)
+          proteinFactor: Number(user.proteinFactor),
+          sodiumFactor: Number(user.sodiumFactor),
+          fiberFactor: Number(user.fiberFactor)
         });
       }
     );
@@ -68,6 +72,8 @@ export default class FoodList extends Component {
     let fatGoal = (weight * this.state.fatFactor).toFixed(1);
     let carbGoal = (weight * this.state.carbFactor).toFixed(1);
     let proteinGoal = (weight * this.state.proteinFactor).toFixed(1);
+    let sodiumGoal = (weight * this.state.sodiumFactor).toFixed(1);
+    let fiberGoal = (weight * this.state.fiberFactor).toFixed(1);
     return (
       <div>
         <div className="d-flex flex-row justify-content-center">
@@ -116,6 +122,8 @@ export default class FoodList extends Component {
                 fatSoFar={this.props.fatSoFar}
                 carbSoFar={this.props.carbSoFar}
                 proteinSoFar={this.props.proteinSoFar}
+                sodiumSoFar={this.props.sodiumSoFar}
+                fiberSoFar={this.props.fiberSoFar}
                 makeMacrosArrs={this.props.makeMacrosArrs}
                 revertUserCounts={this.props.revertUserCounts}
                 addEatenFood={this.props.addEatenFood}
@@ -209,6 +217,30 @@ export default class FoodList extends Component {
                   )}
                 </td>
                 <td>{proteinGoal}</td>
+              </tr>
+              <tr>
+                <td>Sodium (mg)</td>
+                <td>
+                  {Number(localStorage.getItem("sodiumSoFar")).toFixed(1)}
+                </td>
+                <td>
+                  {(sodiumGoal - localStorage.getItem("sodiumSoFar")).toFixed(
+                    1
+                  )}
+                </td>
+                <td>{sodiumGoal}</td>
+              </tr>
+              <tr>
+                <td>Fiber</td>
+                <td>
+                  {Number(localStorage.getItem("fiberSoFar")).toFixed(1)}
+                </td>
+                <td>
+                  {(fiberGoal - localStorage.getItem("fiberSoFar")).toFixed(
+                    1
+                  )}
+                </td>
+                <td>{fiberGoal}</td>
               </tr>
             </tbody>
           </Table>

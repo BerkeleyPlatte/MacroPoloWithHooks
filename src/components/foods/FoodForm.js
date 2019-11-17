@@ -3,12 +3,14 @@ import React, { Component } from "react";
 export default class FoodForm extends Component {
   state = {
     name: "",
-    fat: "",
-    carb: "",
-    protein: "",
-    id: "",
-    userId: "",
-    foodId: "",
+    fat: 0,
+    carb: 0,
+    protein: 0,
+    sodium: 0,
+    fiber: 0,
+    id: 0,
+    userId: 0,
+    foodId: 0,
     count: 0
   };
 
@@ -26,6 +28,8 @@ export default class FoodForm extends Component {
       fat: Number(this.state.fat),
       carb: Number(this.state.carb),
       protein: Number(this.state.protein),
+      sodium: Number(this.state.sodium),
+      fiber: Number(this.state.fiber),
       userId: Number(sessionStorage.getItem("userId")),
       count: Number(this.state.count),
     };
@@ -81,6 +85,26 @@ export default class FoodForm extends Component {
               className="form-control"
               onChange={this.handleFieldChange}
               id="protein"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="sodium">Sodium (mg)</label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="sodium"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="fiber">Fiber</label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="fiber"
             />
           </div>
 
