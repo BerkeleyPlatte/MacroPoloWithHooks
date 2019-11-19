@@ -105,20 +105,7 @@ export default class SettingsForm extends Component {
               id="proteinFactor"
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="sodium">
-              Milligrams of sodium per pound of body weight per day:
-            </label>
-            <input
-              type="number"
-              step=".0001"
-              required
-              placeholder={this.state.sodiumFactor}
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="sodiumFactor"
-            />
-          </div>
+          
           <div className="form-group">
             <label htmlFor="fiber">
               Grams of fiber per pound of body weight per day:
@@ -131,6 +118,20 @@ export default class SettingsForm extends Component {
               className="form-control"
               onChange={this.handleFieldChange}
               id="fiberFactor"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="sodium">
+              Milligrams of sodium per pound of body weight per day:
+            </label>
+            <input
+              type="number"
+              step=".0001"
+              required
+              placeholder={this.state.sodiumFactor}
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="sodiumFactor"
             />
           </div>
 

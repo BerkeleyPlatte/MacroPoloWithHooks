@@ -22,8 +22,8 @@ export default class ReportCard extends Component {
                 <th>Fat</th>
                 <th>Carbs</th>
                 <th>Protein</th>
-                <th>Sodium (mg)</th>
                 <th>Fiber</th>
+                <th>Sodium (mg)</th>
                 <th>Calories</th>
               </tr>
             </thead>
@@ -35,8 +35,8 @@ export default class ReportCard extends Component {
                     <td>{(food.fat * food.count).toFixed(1)}</td>
                     <td>{(food.carb * food.count).toFixed(1)}</td>
                     <td>{(food.protein * food.count).toFixed(1)}</td>
-                    <td>{(food.sodium * food.count).toFixed(1)}</td>
                     <td>{(food.fiber * food.count).toFixed(1)}</td>
+                    <td>{(food.sodium * food.count).toFixed(1)}</td>
                     <td>
                       {(
                         food.fat * food.count * 9 +
@@ -54,8 +54,8 @@ export default class ReportCard extends Component {
                 <th>{totalFat}</th>
                 <th>{totalCarb}</th>
                 <th>{totalProtein}</th>
-                <th>{totalSodium}</th>
                 <th>{totalFiber}</th>
+                <th>{totalSodium}</th>
                 <th>{(totalFat * 9 + totalCarb * 4 + totalProtein * 4).toFixed(1)}</th>
               </tr>
             </tfoot>

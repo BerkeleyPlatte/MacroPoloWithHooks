@@ -87,16 +87,7 @@ export default class FoodForm extends Component {
               id="protein"
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="sodium">Sodium (mg)</label>
-            <input
-              type="text"
-              required
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="sodium"
-            />
-          </div>
+          
           <div className="form-group">
             <label htmlFor="fiber">Fiber</label>
             <input
@@ -105,6 +96,16 @@ export default class FoodForm extends Component {
               className="form-control"
               onChange={this.handleFieldChange}
               id="fiber"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="sodium">Sodium (mg)</label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="sodium"
             />
           </div>
 

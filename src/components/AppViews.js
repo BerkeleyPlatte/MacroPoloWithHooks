@@ -24,8 +24,8 @@ class AppViews extends Component {
     fatSoFar: 0,
     carbSoFar: 0,
     proteinSoFar: 0,
-    sodiumSoFar: 0,
     fiberSoFar: 0,
+    sodiumSoFar: 0,
     show: false
   };
 

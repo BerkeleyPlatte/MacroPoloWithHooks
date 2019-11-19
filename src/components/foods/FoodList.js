@@ -183,7 +183,7 @@ export default class FoodList extends Component {
           <Table striped bordered hover size="sm">
             <thead>
               <tr>
-                <th>Macros</th>
+                <th>Macros (g)</th>
                 <th>So Far</th>
                 <th>To Go</th>
                 <th>Goal</th>
@@ -218,18 +218,7 @@ export default class FoodList extends Component {
                 </td>
                 <td>{proteinGoal}</td>
               </tr>
-              <tr>
-                <td>Sodium (mg)</td>
-                <td>
-                  {Number(localStorage.getItem("sodiumSoFar")).toFixed(1)}
-                </td>
-                <td>
-                  {(sodiumGoal - localStorage.getItem("sodiumSoFar")).toFixed(
-                    1
-                  )}
-                </td>
-                <td>{sodiumGoal}</td>
-              </tr>
+              
               <tr>
                 <td>Fiber</td>
                 <td>
@@ -241,6 +230,18 @@ export default class FoodList extends Component {
                   )}
                 </td>
                 <td>{fiberGoal}</td>
+              </tr>
+              <tr>
+                <td>Sodium (mg)</td>
+                <td>
+                  {Number(localStorage.getItem("sodiumSoFar")).toFixed(1)}
+                </td>
+                <td>
+                  {(sodiumGoal - localStorage.getItem("sodiumSoFar")).toFixed(
+                    1
+                  )}
+                </td>
+                <td>&lt;{sodiumGoal}</td>
               </tr>
             </tbody>
           </Table>
