@@ -1,4 +1,4 @@
-const remoteURL = "http://localhost:5001";
+const remoteURL = "https://database.macropoloapp.com";
 
 export default Object.create(null, {
   get: {
