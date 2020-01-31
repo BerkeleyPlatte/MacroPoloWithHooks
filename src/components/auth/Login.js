@@ -1,19 +1,17 @@
-import React, { Component } from "react";
+import React, { useRef } from "react";
 import DataManager from "../../module/DataManager";
 
-export default class Login extends Component {
-  state = {
-    userName: "",
-    password: ""
-  };
+function Login() {
+ const [userName, setUserName] = useState('');
+ const [password, setPassword] = useState('');
 
-  handleFieldChange = evt => {
+  const handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
 
-  handleLogin = e => {
+  const handleLogin = e => {
     e.preventDefault();
     DataManager.getAll("users").then(users => {
       const singleUser = users.find(
@@ -34,7 +32,6 @@ export default class Login extends Component {
     });
   };
 
-  render() {
     return (
       <form className="d-flex flex-column" onSubmit={this.handleLogin}>
         <h1 className="d-flex h4 mb-3 font-weight-normal justify-content-center">
@@ -77,5 +74,6 @@ export default class Login extends Component {
         </div>
       </form>
     );
-  }
 }
+
+export default Login
